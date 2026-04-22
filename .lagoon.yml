@@ -1,0 +1,18 @@
+docker-compose-yaml: docker-compose.yml
+
+project: drupal-dev-days-2027
+
+environment_variables:
+  git_sha: 'true'
+
+routes:
+  insecure: Redirect
+
+environments:
+  main:
+    routes:
+      - nginx:
+          - devdays2027.drupal.es:
+              tls-acme: 'false'
+              insecure: Redirect
+              # hsts: max-age=31536000;includeSubDomains;preload
