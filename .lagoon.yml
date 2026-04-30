@@ -16,3 +16,7 @@ environments:
               tls-acme: 'true'
               insecure: Redirect
               # hsts: max-age=31536000;includeSubDomains;preload
+          - valencia2027.drupaldays.org:
+              tls-acme: 'true'
+              insecure: Redirect
+              # hsts: max-age=31536000;includeSubDomains;preload
