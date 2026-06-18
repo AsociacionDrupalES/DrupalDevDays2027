@@ -19,7 +19,7 @@ dependencies:
 _core:
   default_config_hash: qjZEIsXkHWhxrAx0GJzrvRHjssMg_6QLNeTIeF6rnek
 id: all_sponsors
-label: Patrocinadores
+label: PATROCINADORES
 module: views
 description: ''
 tag: ''

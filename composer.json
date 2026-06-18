@@ -19,9 +19,9 @@
         "drupal/complete_webform_exporter": "^1.0",
         "drupal/config_ignore": "^3.3",
         "drupal/config_readonly": "^1.0",
-        "drupal/core-composer-scaffold": "^11.0",
-        "drupal/core-project-message": "^11.0",
-        "drupal/core-recommended": "^11.0",
+        "drupal/core-composer-scaffold": "~11.2.0",
+        "drupal/core-project-message": "~11.2.0",
+        "drupal/core-recommended": "~11.2.0",
         "drupal/event_platform": "^1.0",
         "drupal/extlink": "^2.0",
         "drupal/gin": "^5.0",
@@ -53,7 +53,7 @@
         "oomphinc/composer-installers-extender": "^2.0.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^11.0",
+        "drupal/core-dev": "~11.2.0",
         "drupal/devel": "^5.3",
         "drupal/potx": "^1.1",
         "drupal/stage_file_proxy": "^3.1",

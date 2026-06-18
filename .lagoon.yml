@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: drupalcampspainbase
+project: drupal-dev-days-2027
 
 environment_variables:
   git_sha: 'true'

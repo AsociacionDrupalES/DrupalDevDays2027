@@ -1,6 +1,6 @@
 x-lagoon-project:
   # Lagoon project name (leave `&lagoon-project` when you edit this)
-  &lagoon-project drupalcamp-spain
+  &lagoon-project drupal-dev-days-spain
 
 x-volumes:
   &default-volumes
@@ -94,7 +94,7 @@ services:
       <<: *default-environment
     volumes:
       - db:/var/lib/mysql
-  
+
   redis:
     image: uselagoon/redis-7:latest
     labels:
