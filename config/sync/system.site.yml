@@ -2,8 +2,8 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: es
 uuid: fda33e75-8699-4f03-bf4e-9d7fb0774539
-name: 'DrupalCamp Spain 2026'
-mail: drupalcamp@drupal.es
+name: 'DrupalDevDays Valencia 2027'
+mail: devdays@drupal.es
 slogan: ''
 page:
   403: ''
