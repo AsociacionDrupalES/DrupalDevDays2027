@@ -26,17 +26,12 @@ environments:
     routes:
       - nginx:
           - valencia2027.drupaldays.org:  *ROUTE
-
     cronjobs:
       - name: drush cron
         schedule: "H * * * *" # This will run the cron once per hour.
         command: drush cron
         service: cli
   develop:
-    routes:
-      - nginx:
-          - nginx.develop.drupal-dev-days-2027.de3.amazee.io: *ROUTE
-
     cronjobs:
       - name: drush cron
         schedule: "H * * * *" # This will run the cron once per hour.
