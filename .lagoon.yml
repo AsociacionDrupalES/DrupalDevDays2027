@@ -25,7 +25,7 @@ environments:
   main:
     routes:
       - nginx:
-          - 2026.drupalcamp.es:  *ROUTE
+          - valencia2027.drupaldays.org:  *ROUTE
 
     cronjobs:
       - name: drush cron
