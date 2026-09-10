@@ -7,8 +7,7 @@ _core:
 id: feedback
 label: 'Comentarios sobre el sitio web'
 recipients:
-  - eventos@drupal.es
-  - drupal.galicia@gmail.com
+  - devdays@drupal.es
 reply: ''
 weight: 0
 message: 'Su mensaje ha sido enviado.'
