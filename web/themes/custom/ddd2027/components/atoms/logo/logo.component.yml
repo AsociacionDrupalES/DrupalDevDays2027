@@ -1,0 +1,18 @@
+schema: "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata-full.schema.json"
+name: Logo
+description: "Displays the site logo."
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:logo' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:logo'
+props:
+  logo_url:
+    type: string
+    title: "Logo URL"
+    description: "Path to the logo image."
+  alt_text:
+    type: string
+    title: "Alt Text"
+    description: "Alternative text for the logo."

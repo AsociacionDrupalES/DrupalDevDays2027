@@ -70,6 +70,14 @@ class Color extends Radios {
         'title' => t('Secondary'),
         'code'  => '#e5dff2',
       ],
+      'secondary-pale' => [
+        'title' => t('Secondary pale'),
+        'code'  => '#C6F5FF',
+      ],
+      'blue-50' => [
+        'title' => t('Very light blue'),
+        'code'  => '#F3F9FF',
+      ],
       'accent'     => [
         'title' => t('Accent'),
         'code'  => '#ecbe34',

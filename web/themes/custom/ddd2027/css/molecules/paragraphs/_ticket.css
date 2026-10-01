@@ -1,0 +1,14 @@
+.paragraph--type--ticket {
+  padding: 0;
+}
+
+.paragraph--type--tickets [data-component-id="ddd2027:grid"] {
+  gap: var(--space-5);
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--tickets [data-component-id="ddd2027:grid"].grid--columns--3 {
+    grid-template-columns: repeat(3, minmax(0, 326px));
+  }
+}

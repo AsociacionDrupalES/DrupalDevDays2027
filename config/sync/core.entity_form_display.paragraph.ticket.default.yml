@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.ticket.field_active
+    - field.field.paragraph.ticket.field_featured
     - field.field.paragraph.ticket.field_link
     - field.field.paragraph.ticket.field_price
     - field.field.paragraph.ticket.field_text
@@ -20,6 +21,13 @@ content:
   field_active:
     type: boolean_checkbox
     weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 7
     region: content
     settings:
       display_label: true

@@ -1,0 +1,29 @@
+<a href="{{ link_url }}" {{ attributes }}>
+  {{ include(
+    'ddd2027:title',
+    { text: title, html_tag: 'h3' },
+    with_context = false
+  ) }}
+  <div class="speakers">{{ speakers }}</div>
+  {% set category_tags = [] %}
+  {% set other_tags = [] %}
+  {% for tag in tags %}
+    {% if tag|render|striptags is not empty %}
+      {% if tag['#field_name'] is defined and tag['#field_name'] == 'field_session_category' %}
+        {% set category_tags = category_tags|merge([tag]) %}
+      {% else %}
+        {% set other_tags = other_tags|merge([tag]) %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  <div class="tags-row">
+    {% if category_tags %}
+      <ul class="tags tags--categories ul--pills--inline ul--pills--small">
+        {% for tag in category_tags %}{{ tag }}{% endfor %}
+      </ul>
+    {% endif %}
+    <ul class="tags ul--pills--inline ul--pills--small">
+      {% for tag in other_tags %}{{ tag }}{% endfor %}
+    </ul>
+  </div>
+</a>

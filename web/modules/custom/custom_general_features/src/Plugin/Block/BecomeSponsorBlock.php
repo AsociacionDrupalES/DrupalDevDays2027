@@ -10,6 +10,8 @@ use Drupal\Core\Extension\ThemeExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Theme\ComponentPluginManager;
+use Drupal\Core\Theme\ThemeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -30,6 +32,8 @@ final class BecomeSponsorBlock extends BlockBase implements ContainerFactoryPlug
     $plugin_id,
     $plugin_definition,
     private readonly ThemeExtensionList $extensionListTheme,
+    private readonly ThemeManagerInterface $themeManager,
+    private readonly ComponentPluginManager $componentPluginManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -43,6 +47,8 @@ final class BecomeSponsorBlock extends BlockBase implements ContainerFactoryPlug
       $plugin_id,
       $plugin_definition,
       $container->get('extension.list.theme'),
+      $container->get('theme.manager'),
+      $container->get('plugin.manager.sdc'),
     );
   }
 
@@ -83,21 +89,75 @@ final class BecomeSponsorBlock extends BlockBase implements ContainerFactoryPlug
   }
 
   /**
+   * Logos del bloque, por orden de preferencia, en la raíz del tema.
+   */
+  private const LOGO_CANDIDATES = [
+    'ddd2027-logo.svg',
+    'logo-gradient.svg',
+  ];
+
+  /**
    * {@inheritdoc}
    */
   public function build(): array {
+    $theme = $this->resolveTheme();
+    if ($theme === NULL) {
+      return [];
+    }
+
     $build['content'] = [
       '#type' => 'component',
-      '#component' => 'drupalcamp:become_sponsor',
+      '#component' => $theme . ':become_sponsor',
       '#props' => [
         'title' => $this->configuration['title'] ?? '',
-        'logo_svg' => file_get_contents($this->extensionListTheme->getPath('drupalcamp') . '/logo-gradient.svg'),
+        'logo_svg' => $this->loadLogo($theme),
       ],
       '#slots' => [
         'text' => $this->configuration['body']['value'] ?? '',
       ],
     ];
     return $build;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheContexts(): array {
+    return array_merge(parent::getCacheContexts(), ['theme']);
+  }
+
+  /**
+   * Devuelve el tema activo, o su primer tema base, que tenga el componente.
+   *
+   * @return string|null
+   *   El nombre del tema, o NULL si ninguno define become_sponsor.
+   */
+  private function resolveTheme(): ?string {
+    $active_theme = $this->themeManager->getActiveTheme();
+    $themes = array_merge(
+      [$active_theme->getName()],
+      array_keys($active_theme->getBaseThemeExtensions()),
+    );
+    foreach ($themes as $theme) {
+      if ($this->componentPluginManager->hasDefinition($theme . ':become_sponsor')) {
+        return $theme;
+      }
+    }
+    return NULL;
+  }
+
+  /**
+   * Lee el primer logo candidato que exista en la raíz del tema.
+   */
+  private function loadLogo(string $theme): string {
+    $path = $this->extensionListTheme->getPath($theme);
+    foreach (self::LOGO_CANDIDATES as $file) {
+      $candidate = $path . '/' . $file;
+      if (is_file($candidate)) {
+        return (string) file_get_contents($candidate);
+      }
+    }
+    return '';
   }
 
 }

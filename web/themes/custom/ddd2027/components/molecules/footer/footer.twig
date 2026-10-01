@@ -1,0 +1,22 @@
+<footer role="contentinfo" class="footer">
+  {{ include(
+    'ddd2027:wave_divider',
+    {},
+    with_context = false
+  ) }}
+  <div class="footer__content">
+    <div class="footer__logo">
+      <img src="{{ '/' ~ directory ~ '/ddd2027-logo.png' }}" alt="Drupal Dev Days" />
+    </div>
+    <div class="footer__social">
+      <a href="https://www.linkedin.com/showcase/drupalcamp-spain/" title="Linkedin" class="footer__social__icon" target="_blank">{{ source(directory ~ '/images/icons/social/linkedin.svg') }}<span class="visually-hidden">Linkedin de DrupalCamp Spain</span></a>
+      <a href="https://www.instagram.com/drupalcampspain/" title="Instagram" class="footer__social__icon" target="_blank">{{ source(directory ~ '/images/icons/social/instagram.svg') }}<span class="visually-hidden">Instagram de DrupalCamp Spain</span></a>
+      <a href="https://www.youtube.com/channel/UCJlthEUN__9_-KWFQ_-0fLg" title="Youtube" class="footer__social__icon" target="_blank">{{ source(directory ~ '/images/icons/social/youtube.svg') }}<span class="visually-hidden">YouTube de Asociación Española de Drupal</span></a>
+      <a href="https://github.com/AsociacionDrupalES" title="GitHub" class="footer__social__icon" target="_blank">{{ source(directory ~ '/images/icons/social/github.svg') }}<span class="visually-hidden">GitHub de DrupalCamp</span></a>
+    </div>
+    <div class="footer__menu">
+      {{ content }}
+    </div>
+    <p class="footer__copyright">© 2026 Drupal Dev Days</p>
+  </div>
+</footer>

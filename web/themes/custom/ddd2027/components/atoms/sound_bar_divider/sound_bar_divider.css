@@ -1,0 +1,16 @@
+[data-component-id="ddd2027:sound_bar_divider"] {
+  --sound-bar-color: var(--color--accent);
+  --sound-bar-height: 40px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: max(2px, calc(var(--sound-bar-height) / 12));
+  height: var(--sound-bar-height);
+}
+
+[data-component-id="ddd2027:sound_bar_divider"] .sound-bar-divider__bar {
+  width: max(3px, calc(var(--sound-bar-height) / 10));
+  background: var(--sound-bar-color);
+  border-radius: 2px;
+}

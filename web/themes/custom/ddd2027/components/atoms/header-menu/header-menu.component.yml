@@ -1,0 +1,32 @@
+schema: "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata-full.schema.json"
+name: Header menu
+description: "Displays the main navigation menu."
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:header-menu' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:header-menu'
+props:
+  items:
+    type: array
+    title: "Menu Items"
+    description: "Array of menu links."
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+        below:
+          type: array
+          title: "Submenu items"
+          description: "Second-level menu links, rendered as a submenu."
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              url:
+                type: string

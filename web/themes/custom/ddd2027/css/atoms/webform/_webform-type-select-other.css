@@ -1,0 +1,9 @@
+.webform-type-webform-select-other legend {
+  display: block;
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  font-weight: 700;
+}
+.webform-type-webform-select-other .fieldset-wrapper > div:first-child {
+  margin: 0;
+}

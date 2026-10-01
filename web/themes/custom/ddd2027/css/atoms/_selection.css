@@ -1,0 +1,7 @@
+::selection {
+  background-color: var(--color--accent);
+}
+
+.component-background-color-accent ::selection {
+  background-color: var(--color--accent);
+}

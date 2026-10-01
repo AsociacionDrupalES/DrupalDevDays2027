@@ -1,0 +1,29 @@
+uuid: a1f80ce4-276c-4b8d-8cf9-305d5d1f6f8b
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.all_sponsors_ddd2027
+  module:
+    - system
+    - views
+  theme:
+    - ddd2027
+id: ddd2027_all_sponsors
+theme: ddd2027
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:all_sponsors_ddd2027-block_1'
+settings:
+  id: 'views_block:all_sponsors_ddd2027-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/sesiones/*\r\n/sponsors_list"

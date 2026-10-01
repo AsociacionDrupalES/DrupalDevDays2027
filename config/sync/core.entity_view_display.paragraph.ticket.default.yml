@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.ticket.field_active
+    - field.field.paragraph.ticket.field_featured
     - field.field.paragraph.ticket.field_link
     - field.field.paragraph.ticket.field_price
     - field.field.paragraph.ticket.field_text
@@ -56,6 +57,8 @@ third_party_settings:
               source_id: token
               source:
                 value: '[paragraph:behavior_settings_value:custom_color:color]'
+            featured:
+              source_id: 'field_property:paragraph:field_featured:value'
           slots:
             text:
               sources:
@@ -116,4 +119,5 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  field_featured: true

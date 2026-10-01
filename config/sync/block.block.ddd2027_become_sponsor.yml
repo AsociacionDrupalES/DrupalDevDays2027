@@ -1,0 +1,29 @@
+uuid: f04cf4e1-7a4d-447d-a4a5-6325e524f277
+langcode: es
+status: true
+dependencies:
+  module:
+    - custom_general_features
+    - system
+  theme:
+    - ddd2027
+id: ddd2027_become_sponsor
+theme: ddd2027
+region: content
+weight: -1
+provider: null
+plugin: custom_general_features_become_sponsor
+settings:
+  id: custom_general_features_become_sponsor
+  label: '¿Cómo llego a la Camp?'
+  label_display: '0'
+  provider: custom_general_features
+  title: '¿Cómo llego a la Camp?'
+  body:
+    value: '<p>Fácil: te subes al <strong>bus lanzadera</strong> y en un momento estás en la <strong>Cidade da Cultura</strong>. Gratis, cómodo y sin complicaciones. ¡Nos vemos arriba!</p><p><a class="link--button link--button--secondary" href="/node/125" data-entity-type="node" data-entity-uuid="c72fa50b-61d3-4f62-9a36-9e0ac5dfd025" data-entity-substitution="canonical">Quiero saber más</a></p>'
+    format: full_html
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/sesiones/*'

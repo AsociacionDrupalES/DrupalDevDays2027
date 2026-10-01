@@ -1,0 +1,68 @@
+[data-component-id="ddd2027:carousel"] {
+  padding-bottom: var(--space-16);
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons {
+  bottom: 0;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: end;
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons > div {
+  border: 1px solid var(--color--primary);
+  border-radius: 100%;
+  height: 48px;
+  position: static;
+  width: 48px;
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons > div.swiper-button-next {
+  transform: rotate(180deg);
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons > div:hover {
+  background-color: var(--color--primary);
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons > div:hover::after {
+  background-color: var(--color--background-primary);
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-buttons > div::after {
+  background-color: var(--color--primary);
+  content: "";
+  height: 16px;
+  mask: url('data:image/svg+xml,<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 7.88892H3.83L9.42 2.29892L8 0.888916L0 8.88892L8 16.8889L9.41 15.4789L3.83 9.88892H16V7.88892Z" fill="%23293156"/></svg>');
+  transition: all var(--duration-normal) var(--ease-out);
+  width: 16px;
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-pagination {
+  bottom: 0;
+  left: 0;
+  padding: var(--space-5) 0;
+  text-align: center;
+  width: 100%;
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--color--primary-medium);
+  opacity: 0.7;
+  transition: all var(--duration-normal) var(--ease-out);
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+[data-component-id="ddd2027:carousel"] .swiper-pagination .swiper-pagination-bullet:hover,
+[data-component-id="ddd2027:carousel"] .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--color--primary);
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+}

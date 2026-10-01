@@ -1,0 +1,27 @@
+uuid: e6b1dadd-ca89-4551-8d10-0c4abec5c034
+langcode: es
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: KEPyHBDMlCErbOYJeZHI1FmYb5-baY4P_cRKcnZXowg
+id: ddd2027_account_menu
+theme: ddd2027
+region: content
+weight: 1
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Menú de cuenta de usuario'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

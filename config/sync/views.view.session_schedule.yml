@@ -190,7 +190,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'There are currently no sessions scheduled for this day.'
+          content: 'Actualmente no hay sesiones programadas para este día.'
           tokenize: false
       sorts:
         field_when_value_1:
@@ -532,6 +532,7 @@ display:
           plugin_id: bundle
           value:
             session: session
+            special_session: special_session
           expose:
             operator_limit_selection: false
             operator_list: {  }

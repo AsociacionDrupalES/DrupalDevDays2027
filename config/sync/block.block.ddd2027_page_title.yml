@@ -1,0 +1,20 @@
+uuid: 32368d3c-ee72-4b4c-aacd-a94729d7b219
+langcode: es
+status: true
+dependencies:
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: lItLElVr83iAG70b2DoFOAXXQ1vRZtErY1oEFhkOmSQ
+id: ddd2027_page_title
+theme: ddd2027
+region: title
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  label_display: '0'
+  provider: core
+visibility: {  }

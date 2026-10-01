@@ -1,0 +1,20 @@
+uuid: 5fdbdf75-4140-40e2-b258-5cba3b9fc754
+langcode: es
+status: true
+dependencies:
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: olUc5_TVLYvAOxdceC4RhocMtvIxvFS8pdPxJLv6UUQ
+id: ddd2027_local_actions
+theme: ddd2027
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones principales de administración'
+  label_display: '0'
+  provider: core
+visibility: {  }

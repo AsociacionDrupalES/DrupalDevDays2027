@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.hero.field_logo
+    - field.field.paragraph.hero.field_tagline
     - field.field.paragraph.hero.field_text
     - field.field.paragraph.hero.field_title
     - paragraphs.paragraphs_type.hero
@@ -36,6 +37,10 @@ third_party_settings:
               source_id: token
               source:
                 value: '[paragraph:field_title]'
+            tagline:
+              source_id: token
+              source:
+                value: '[paragraph:field_tagline]'
           slots:
             text:
               sources:
@@ -84,4 +89,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_tagline: true

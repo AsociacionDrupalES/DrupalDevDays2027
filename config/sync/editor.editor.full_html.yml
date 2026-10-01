@@ -124,6 +124,12 @@ settings:
           label: 'Botón transparente'
           element: '<a class="link--button link--button--transparent">'
         -
+          label: 'Botón naranja'
+          element: '<a class="link--button link--button--accent">'
+        -
+          label: 'Botón cian'
+          element: '<a class="link--button link--button--cyan">'
+        -
           label: 'Con flecha'
           element: '<a class="link--arrow">'
         -

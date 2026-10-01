@@ -157,3 +157,15 @@ msgstr "Comportamiento de modo de visualización"
 msgid "Adds a 'view mode' selector field to the Paragraph entity."
 msgstr "Añade un selector de 'modo de visualización' a la entidad Párrafo."
 
+
+#: modules/custom/custom_paragraphs_extras/src/Plugin/paragraphs/Behavior/AlignmentBehavior.php
+msgid "Alignment"
+msgstr "Alineación"
+
+#: modules/custom/custom_paragraphs_extras/src/Plugin/paragraphs/Behavior/AlignmentBehavior.php
+msgid "Adds an alignment class to the Paragraph entity."
+msgstr "Añade una clase de alineación al paragraph."
+
+#: modules/custom/custom_paragraphs_extras/src/Plugin/paragraphs/Behavior/AlignmentBehavior.php
+msgid "Center"
+msgstr "Centrado"
