@@ -10,7 +10,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: themes/custom/drupalcamp/logo.svg
+  path: themes/custom/ddd2027/ddd2027-logo.svg
   use_default: false
 third_party_settings:
   shortcut:

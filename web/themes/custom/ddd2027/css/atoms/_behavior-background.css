@@ -62,6 +62,14 @@
   background-color: var(--component-bg-color);
 }
 
+.component-background-color.component-background-color-accent-faint {
+  --component-bg-color: var(--color--accent-faint);
+}
+
+.component-background-color.component-background-color-accent-faint:before {
+  background-color: var(--component-bg-color);
+}
+
 .component-background-color.component-background-color-gray {
   --component-bg-color: var(--color--gray);
 }

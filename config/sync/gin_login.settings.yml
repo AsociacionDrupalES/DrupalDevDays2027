@@ -3,5 +3,5 @@ _core:
 logo:
   use_default: true
 brand_image:
-  use_default: false
-  path: themes/custom/drupalcamp/images/login.webp
+  use_default: true
+  path: themes/custom/ddd2027/ddd2027-logo.svg

@@ -12,7 +12,7 @@ dependencies:
 id: ddd2027_all_sponsors
 theme: ddd2027
 region: content
-weight: 0
+weight: 1
 provider: null
 plugin: 'views_block:all_sponsors_ddd2027-block_1'
 settings:

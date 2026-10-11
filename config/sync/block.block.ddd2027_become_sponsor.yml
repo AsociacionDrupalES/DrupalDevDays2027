@@ -10,7 +10,7 @@ dependencies:
 id: ddd2027_become_sponsor
 theme: ddd2027
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: custom_general_features_become_sponsor
 settings:

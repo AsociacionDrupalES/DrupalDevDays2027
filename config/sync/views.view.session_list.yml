@@ -1,6 +1,6 @@
 uuid: 38552816-9254-4025-be6c-aab03e07e055
 langcode: es
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -22,7 +22,6 @@ dependencies:
     - csv_serialization
     - custom_general_features
     - node
-    - options
     - rest
     - serialization
     - taxonomy

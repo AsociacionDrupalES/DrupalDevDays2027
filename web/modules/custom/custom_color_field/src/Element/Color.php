@@ -82,6 +82,10 @@ class Color extends Radios {
         'title' => t('Accent'),
         'code'  => '#ecbe34',
       ],
+      'accent-faint' => [
+        'title' => t('Accent faint'),
+        'code'  => '#FFEFE5',
+      ],
       'gray'          => [
         'title' => t('Gray'),
         'code'  => '#f5f5f5',

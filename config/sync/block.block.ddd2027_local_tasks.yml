@@ -9,7 +9,7 @@ _core:
 id: ddd2027_local_tasks
 theme: ddd2027
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

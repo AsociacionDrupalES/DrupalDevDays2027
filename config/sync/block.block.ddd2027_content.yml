@@ -11,7 +11,7 @@ _core:
 id: ddd2027_content
 theme: ddd2027
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: system_main_block
 settings:
