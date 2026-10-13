@@ -135,3 +135,63 @@ function custom_general_features_update_11001(&$sandbox): string {
     $sandbox['processed']
   );
 }
+
+/**
+ * Update "Selection criteria for talks" (node 3) for Drupal Dev Days 2027.
+ *
+ * Values marked as [TBD] are pending decisions from the organization.
+ */
+function custom_general_features_update_11002(): string {
+  $bodies = [
+    'en' => <<<'HTML'
+<blockquote><p class="p--text-bigger">SESSION SUBMISSION DEADLINE: [TBD: Month DD, 2027]</p></blockquote>
+<p><strong>The selection criteria are based on the following parameters:</strong></p>
+<p><strong>DRUPAL VERSION</strong><br>Priority will be given to topics related to current versions of Drupal: Drupal 11, Drupal 12 and Drupal CMS. Sessions about older versions will only be considered if they focus on upgrades or migrations.</p>
+<p><strong>PROPOSED TOPICS</strong></p>
+<ul class="ul--pills--inline"><li>Development</li><li>Testing</li><li>DevOps / Infrastructure</li><li>Front-end / Theming</li><li>Site Building</li><li>Drupal CMS / Recipes</li><li>AI</li><li>Accessibility</li><li>Performance</li><li>Contribution / Mentoring</li><li>Project management / Work methodologies</li><li>Business</li><li>Others</li></ul>
+<p><strong>LANGUAGE</strong><br>Drupal Developer Days is an international event, so all sessions must be presented in English.</p>
+<p><strong>REQUIRED KNOWLEDGE</strong><br>For each session, we will consider whether it is aimed at people with a technical profile (programming, infrastructure, etc.) or at a general audience, and whether it requires prior knowledge of Drupal (site building, theming, development, etc.).</p>
+<p><strong>MULTIPLE SESSIONS/WORKSHOPS PROPOSED BY ONE PERSON</strong><br>Every proposal is evaluated on its content, regardless of how many sessions each person submits. If several sessions or workshops by the same person are accepted, we will ask whether they can prepare all of them. If they can, they may present everything accepted. If not, they must choose, up to a maximum of 2 talks and/or workshops.<br>Proposals that follow the <a href="/en/guide-speakers">Guide for Speakers</a> will be valued positively.</p>
+<p><strong>SELECTION PANEL</strong><br>Sessions will be reviewed by a panel of people with experience organizing and taking part in Drupal and other technology events:</p>
+<ul><li>[TBD: name and drupal.org profile]</li><li>[TBD: name and drupal.org profile]</li><li>[TBD: name and drupal.org profile]</li></ul>
+<p><strong>SELECTION TIMELINE</strong><br>The panel will review sessions from [TBD: date] to [TBD: date]. During the week of [TBD: date] we will email every speaker to let them know whether their session has been accepted.</p>
+<p><strong>Note:</strong> The Spanish Drupal Association reserves the right to include, rearrange or modify the proposed sessions once the submission period has ended, always with the aim of ensuring the best possible experience for the community, enriching the diversity of proposals and ensuring the event runs smoothly.</p>
+HTML,
+    'es' => <<<'HTML'
+<blockquote><p class="p--text-bigger">FECHA LÍMITE DE PRESENTACIÓN DE SESIONES: [PENDIENTE: DD de mes de 2027]</p></blockquote>
+<p><strong>Los criterios de selección se basan en los siguientes parámetros:</strong></p>
+<p><strong>VERSIÓN DE DRUPAL</strong><br>Tendrán prioridad los temas relacionados con las versiones actuales de Drupal: Drupal 11, Drupal 12 y Drupal CMS. Las sesiones sobre versiones anteriores solo se tendrán en cuenta si tratan sobre actualizaciones o migraciones.</p>
+<p><strong>TEMÁTICAS PROPUESTAS</strong></p>
+<ul class="ul--pills--inline"><li>Development</li><li>Testing</li><li>DevOps / Sistemas</li><li>Front-end / Theming</li><li>Site Building</li><li>Drupal CMS / Recipes</li><li>IA</li><li>Accesibilidad</li><li>Rendimiento</li><li>Contribución / Mentoring</li><li>Gestión de proyectos / Metodologías de trabajo</li><li>Business</li><li>Otros</li></ul>
+<p><strong>IDIOMA</strong><br>Drupal Developer Days es un evento internacional, por lo que todas las sesiones deben impartirse en inglés.</p>
+<p><strong>CONOCIMIENTOS REQUERIDOS</strong><br>De cada sesión se valorará si está dirigida a personas con un perfil técnico (programación, sistemas, etc.) o a cualquier público, y si requiere conocimientos previos de Drupal (site building, theming, desarrollo, etc.).</p>
+<p><strong>VARIAS SESIONES/TALLERES PROPUESTOS POR UNA PERSONA</strong><br>Cada propuesta se valorará por su contenido, independientemente del número de sesiones que presente cada persona. Si se aceptan varias sesiones o talleres de una misma persona, se le preguntará si puede preparar todo el contenido. En caso afirmativo, podrá impartir todo lo aceptado; si no, tendrá que elegir, con un máximo de 2 charlas y/o talleres.<br>Se valorarán positivamente las propuestas que sigan la <a href="/es/guia-para-ponentes">Guía para ponentes</a>.</p>
+<p><strong>PANEL DE SELECCIÓN</strong><br>Las sesiones las evaluará un grupo de personas con experiencia en la organización y participación en eventos de Drupal y otras tecnologías:</p>
+<ul><li>[PENDIENTE: nombre y perfil de drupal.org]</li><li>[PENDIENTE: nombre y perfil de drupal.org]</li><li>[PENDIENTE: nombre y perfil de drupal.org]</li></ul>
+<p><strong>PLAZOS DE SELECCIÓN</strong><br>El panel evaluará las sesiones del [PENDIENTE: fecha] al [PENDIENTE: fecha]. Durante la semana del [PENDIENTE: fecha] se enviará un correo a cada ponente indicando si su sesión ha sido aceptada.</p>
+<p><strong>Nota:</strong> La Asociación Española de Drupal se reserva el derecho de incluir, reorganizar o modificar las sesiones propuestas una vez finalizado el plazo de presentación, siempre con el objetivo de garantizar la mejor experiencia posible para la comunidad, enriquecer la diversidad de las propuestas y asegurar el buen desarrollo del evento.</p>
+HTML,
+  ];
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load(3);
+  if (!$node instanceof ContentEntityInterface) {
+    return 'Node 3 not found. Nothing to do.';
+  }
+
+  foreach ($bodies as $langcode => $value) {
+    if (!$node->hasTranslation($langcode)) {
+      continue;
+    }
+    $node->getTranslation($langcode)->set('body', [
+      'value' => str_replace("\n", '', $value),
+      'format' => 'full_html',
+    ]);
+  }
+
+  $node->setNewRevision(TRUE);
+  $node->setRevisionLogMessage('Issue #14: Review selection criteria for Drupal Dev Days 2027.');
+  $node->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+  $node->save();
+
+  return 'Updated "Selection criteria for talks" (node 3).';
+}
