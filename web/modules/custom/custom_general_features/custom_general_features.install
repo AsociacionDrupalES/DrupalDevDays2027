@@ -195,3 +195,78 @@ HTML,
 
   return 'Updated "Selection criteria for talks" (node 3).';
 }
+
+/**
+ * Update "Guide for Speakers" (node 6) for Drupal Dev Days 2027.
+ *
+ * Values marked as [TBD] are pending decisions from the organization.
+ */
+function custom_general_features_update_11003(): string {
+  // New field_text values, keyed by paragraph ID and language.
+  $texts = [
+    // Intro.
+    37 => [
+      'en' => '<p><strong>Here are some tips (some of them well known) to make sure nothing gets in the way of your talk and the content can really shine:</strong></p>',
+    ],
+    // Talks format.
+    32 => [
+      'en' => '<ul><li>Standard talks last 35 minutes, 40 at most, to explain and develop the topic. A volunteer will show you two signs: one when 10 minutes are left and another when 5 minutes are left.</li><li>After the talk, there are 5 to 10 minutes for questions from the audience.</li></ul>',
+      'es' => '<ul><li>Las charlas estándar son las que hemos visto habitualmente en otras ediciones. La persona ponente dispone de 35 minutos, 40 como máximo, para explicar y desarrollar el tema de la charla. Una persona voluntaria te mostrará dos avisos, uno cuando queden 10 minutos y otro cuando queden 5 minutos.</li><li>Una vez terminada la exposición, pasamos al turno de preguntas. Se dispone de 5 a 10 minutos para responder a las preguntas planteadas por las personas asistentes a la charla.</li></ul>',
+    ],
+    // Time management.
+    35 => [
+      'en' => '<ul><li>The secret to a great talk is practice. It is important to manage your time so that the session fits within the allotted duration. A volunteer will let you know when 10 and 5 minutes are left.</li><li>Don\'t use up all your time: questions are one of the most important parts of the session. Leave time for them, as they will likely touch on points from your talk. This will enrich your presentation and win over the audience.</li><li>It\'s better to go slowly and cover less than to try to cover everything at full speed, like a Roadrunner. Less is more.</li></ul>',
+      'es' => '<ul><li>El secreto para que una charla sea redonda es practicar una y otra vez. Es importante que controles los tiempos y la sesión se ajuste a la duración marcada. Una persona voluntaria te avisará cuando falten 10 y 5 minutos.</li><li>Es importante que no agotes el tiempo, ya que las preguntas son una de las partes más importantes de la sesión. Deja tiempo para esta parte en la que, muy seguramente, tocarás puntos de tu charla. Con ello conseguirás enriquecer tu intervención y ganarte al público.</li><li>Mejor ir despacio y contar menos que querer abarcar todo y ser un “Correcaminos”. Menos es más.</li></ul>',
+    ],
+    // Style and design of slides.
+    36 => [
+      'en' => '<ul><li>The organizing team recommends keeping the event\'s visual style. You can use this template: [TBD: Drupal Developer Days 2027 slide template link].</li><li>Keep it to eight lines of text per slide at most. Two readable slides are better than one that nobody can read.</li><li>Each line should have a maximum of 30 characters.</li><li>Use a font size of 28 points or larger, and be generous with line spacing.</li><li>Use few words, but choose them carefully for their meaning; this will make them easy to read and memorable for the audience.</li><li>What matters is not the slides, but you and everything you bring to the audience. Slides are a tool, not the talk!</li><li>If the content requires attention due to its complexity, divide it into sections and use diagrams. This way, you can expand or shorten your presentation on specific topics you consider relevant.</li><li>Avoid using UPPERCASE letters, as they make reading difficult, take up space, and are not attractive to your listeners. It\'s better to use bold or italics, but sparingly. We also do not recommend underlining.</li><li>The projection will be in 16:9 format (1920×1080 pixels).</li></ul>',
+      'es' => '<ul><li>La recomendación del equipo organizador es mantener la línea gráfica del evento. Para ello ponemos a vuestra disposición la siguiente plantilla: [PENDIENTE: enlace a la plantilla de Drupal Developer Days 2027].</li><li>Limita a ocho las líneas de texto por diapositiva (mejor usar dos diapositivas que una en la que no se pueda leer nada).</li><li>Cada línea debe tener un máximo de 30 caracteres.</li><li>Utiliza un tamaño de 28 puntos, o más, y no te cortes con el interlineado, que sea generoso.</li><li>Emplea pocas palabras, pero con solera en significado, así serán fáciles de leer y se quedarán grabadas en la audiencia.</li><li>Lo importante no son las diapositivas, sino la persona ponente y todo lo que vas a aportar. Las diapositivas son un recurso, ¡no son la charla!</li><li>Si el contenido requiere de atención, por su complejidad, divídelo en secciones, utiliza esquemas, de esta forma podrás ampliar o recortar tu exposición con determinados temas que consideres que son relevantes.</li><li>Evita el uso de MAYÚSCULAS, complican la lectura, ocupan espacio y no resultan atractivas para quien te está escuchando. Es mejor que apuestes por el empleo de negrita o cursiva… pero sin abusar. Tampoco te recomendamos el subrayado.</li><li>La proyección se realizará en formato 16:9 (1920×1080 píxeles).</li></ul>',
+    ],
+  ];
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load(6);
+  if (!$node instanceof ContentEntityInterface) {
+    return 'Node 6 not found. Nothing to do.';
+  }
+
+  // Walk the paragraph tree from the node so the changes are saved as new
+  // paragraph revisions referenced by the new node revision. Ancestors of a
+  // changed paragraph must be flagged too, or they will not be re-saved.
+  $update = function (ContentEntityInterface $entity) use (&$update, $texts): bool {
+    $changed = FALSE;
+    foreach (['field_sections', 'field_subsections'] as $field_name) {
+      if (!$entity->hasField($field_name)) {
+        continue;
+      }
+      foreach ($entity->get($field_name)->referencedEntities() as $paragraph) {
+        $paragraph_changed = FALSE;
+        foreach ($texts[$paragraph->id()] ?? [] as $langcode => $value) {
+          if ($paragraph->hasTranslation($langcode)) {
+            $paragraph->getTranslation($langcode)->set('field_text', [
+              'value' => $value,
+              'format' => $paragraph->get('field_text')->format,
+            ]);
+            $paragraph_changed = TRUE;
+          }
+        }
+        if ($update($paragraph) || $paragraph_changed) {
+          $paragraph->setNeedsSave(TRUE);
+          $changed = TRUE;
+        }
+      }
+    }
+    return $changed;
+  };
+
+  if (!$update($node)) {
+    return 'No paragraphs to update in node 6.';
+  }
+
+  $node->setNewRevision(TRUE);
+  $node->setRevisionLogMessage('Issue #14: Review guide for speakers for Drupal Dev Days 2027.');
+  $node->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+  $node->save();
+
+  return 'Updated "Guide for Speakers" (node 6).';
+}
