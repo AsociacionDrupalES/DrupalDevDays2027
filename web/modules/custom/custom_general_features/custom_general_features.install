@@ -135,3 +135,289 @@ function custom_general_features_update_11001(&$sandbox): string {
     $sandbox['processed']
   );
 }
+
+/**
+ * Update "Selection criteria for talks" (node 3) for Drupal Dev Days 2027.
+ *
+ * Values marked as [TBD] are pending decisions from the organization.
+ */
+function custom_general_features_update_11002(): string {
+  $bodies = [
+    'en' => <<<'HTML'
+<blockquote><p class="p--text-bigger">SESSION SUBMISSION DEADLINE: [TBD: Month DD, 2027]</p></blockquote>
+<p><strong>The selection criteria are based on the following parameters:</strong></p>
+<p><strong>DRUPAL VERSION</strong><br>Priority will be given to topics related to current versions of Drupal: Drupal 11, Drupal 12 and Drupal CMS. Sessions about older versions will only be considered if they focus on upgrades or migrations.</p>
+<p><strong>PROPOSED TOPICS</strong></p>
+<ul class="ul--pills--inline"><li>Development</li><li>Testing</li><li>DevOps / Infrastructure</li><li>Front-end / Theming</li><li>Site Building</li><li>Drupal CMS / Recipes</li><li>AI</li><li>Accessibility</li><li>Performance</li><li>Contribution / Mentoring</li><li>Project management / Work methodologies</li><li>Business</li><li>Others</li></ul>
+<p><strong>LANGUAGE</strong><br>Drupal Developer Days is an international event, so all sessions must be presented in English.</p>
+<p><strong>REQUIRED KNOWLEDGE</strong><br>For each session, we will consider whether it is aimed at people with a technical profile (programming, infrastructure, etc.) or at a general audience, and whether it requires prior knowledge of Drupal (site building, theming, development, etc.).</p>
+<p><strong>MULTIPLE SESSIONS/WORKSHOPS PROPOSED BY ONE PERSON</strong><br>Every proposal is evaluated on its content, regardless of how many sessions each person submits. If several sessions or workshops by the same person are accepted, we will ask whether they can prepare all of them. If they can, they may present everything accepted. If not, they must choose, up to a maximum of 2 talks and/or workshops.<br>Proposals that follow the <a href="/en/guide-speakers">Guide for Speakers</a> will be valued positively.</p>
+<p><strong>SELECTION PANEL</strong><br>Sessions will be reviewed by a panel of people with experience organizing and taking part in Drupal and other technology events:</p>
+<ul><li>[TBD: name and drupal.org profile]</li><li>[TBD: name and drupal.org profile]</li><li>[TBD: name and drupal.org profile]</li></ul>
+<p><strong>SELECTION TIMELINE</strong><br>The panel will review sessions from [TBD: date] to [TBD: date]. During the week of [TBD: date] we will email every speaker to let them know whether their session has been accepted.</p>
+<p><strong>Note:</strong> The Spanish Drupal Association reserves the right to include, rearrange or modify the proposed sessions once the submission period has ended, always with the aim of ensuring the best possible experience for the community, enriching the diversity of proposals and ensuring the event runs smoothly.</p>
+HTML,
+    'es' => <<<'HTML'
+<blockquote><p class="p--text-bigger">FECHA LÍMITE DE PRESENTACIÓN DE SESIONES: [PENDIENTE: DD de mes de 2027]</p></blockquote>
+<p><strong>Los criterios de selección se basan en los siguientes parámetros:</strong></p>
+<p><strong>VERSIÓN DE DRUPAL</strong><br>Tendrán prioridad los temas relacionados con las versiones actuales de Drupal: Drupal 11, Drupal 12 y Drupal CMS. Las sesiones sobre versiones anteriores solo se tendrán en cuenta si tratan sobre actualizaciones o migraciones.</p>
+<p><strong>TEMÁTICAS PROPUESTAS</strong></p>
+<ul class="ul--pills--inline"><li>Development</li><li>Testing</li><li>DevOps / Sistemas</li><li>Front-end / Theming</li><li>Site Building</li><li>Drupal CMS / Recipes</li><li>IA</li><li>Accesibilidad</li><li>Rendimiento</li><li>Contribución / Mentoring</li><li>Gestión de proyectos / Metodologías de trabajo</li><li>Business</li><li>Otros</li></ul>
+<p><strong>IDIOMA</strong><br>Drupal Developer Days es un evento internacional, por lo que todas las sesiones deben impartirse en inglés.</p>
+<p><strong>CONOCIMIENTOS REQUERIDOS</strong><br>De cada sesión se valorará si está dirigida a personas con un perfil técnico (programación, sistemas, etc.) o a cualquier público, y si requiere conocimientos previos de Drupal (site building, theming, desarrollo, etc.).</p>
+<p><strong>VARIAS SESIONES/TALLERES PROPUESTOS POR UNA PERSONA</strong><br>Cada propuesta se valorará por su contenido, independientemente del número de sesiones que presente cada persona. Si se aceptan varias sesiones o talleres de una misma persona, se le preguntará si puede preparar todo el contenido. En caso afirmativo, podrá impartir todo lo aceptado; si no, tendrá que elegir, con un máximo de 2 charlas y/o talleres.<br>Se valorarán positivamente las propuestas que sigan la <a href="/es/guia-para-ponentes">Guía para ponentes</a>.</p>
+<p><strong>PANEL DE SELECCIÓN</strong><br>Las sesiones las evaluará un grupo de personas con experiencia en la organización y participación en eventos de Drupal y otras tecnologías:</p>
+<ul><li>[PENDIENTE: nombre y perfil de drupal.org]</li><li>[PENDIENTE: nombre y perfil de drupal.org]</li><li>[PENDIENTE: nombre y perfil de drupal.org]</li></ul>
+<p><strong>PLAZOS DE SELECCIÓN</strong><br>El panel evaluará las sesiones del [PENDIENTE: fecha] al [PENDIENTE: fecha]. Durante la semana del [PENDIENTE: fecha] se enviará un correo a cada ponente indicando si su sesión ha sido aceptada.</p>
+<p><strong>Nota:</strong> La Asociación Española de Drupal se reserva el derecho de incluir, reorganizar o modificar las sesiones propuestas una vez finalizado el plazo de presentación, siempre con el objetivo de garantizar la mejor experiencia posible para la comunidad, enriquecer la diversidad de las propuestas y asegurar el buen desarrollo del evento.</p>
+HTML,
+  ];
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load(3);
+  if (!$node instanceof ContentEntityInterface) {
+    return 'Node 3 not found. Nothing to do.';
+  }
+
+  foreach ($bodies as $langcode => $value) {
+    if (!$node->hasTranslation($langcode)) {
+      continue;
+    }
+    $node->getTranslation($langcode)->set('body', [
+      'value' => str_replace("\n", '', $value),
+      'format' => 'full_html',
+    ]);
+  }
+
+  $node->setNewRevision(TRUE);
+  $node->setRevisionLogMessage('Issue #14: Review selection criteria for Drupal Dev Days 2027.');
+  $node->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+  $node->save();
+
+  return 'Updated "Selection criteria for talks" (node 3).';
+}
+
+/**
+ * Update "Guide for Speakers" (node 6) for Drupal Dev Days 2027.
+ *
+ * Values marked as [TBD] are pending decisions from the organization.
+ */
+function custom_general_features_update_11003(): string {
+  // New field_text values, keyed by paragraph ID and language.
+  $texts = [
+    // Intro.
+    37 => [
+      'en' => '<p><strong>Here are some tips (some of them well known) to make sure nothing gets in the way of your talk and the content can really shine:</strong></p>',
+    ],
+    // Talks format.
+    32 => [
+      'en' => '<ul><li>Standard talks last 35 minutes, 40 at most, to explain and develop the topic. A volunteer will show you two signs: one when 10 minutes are left and another when 5 minutes are left.</li><li>After the talk, there are 5 to 10 minutes for questions from the audience.</li></ul>',
+      'es' => '<ul><li>Las charlas estándar son las que hemos visto habitualmente en otras ediciones. La persona ponente dispone de 35 minutos, 40 como máximo, para explicar y desarrollar el tema de la charla. Una persona voluntaria te mostrará dos avisos, uno cuando queden 10 minutos y otro cuando queden 5 minutos.</li><li>Una vez terminada la exposición, pasamos al turno de preguntas. Se dispone de 5 a 10 minutos para responder a las preguntas planteadas por las personas asistentes a la charla.</li></ul>',
+    ],
+    // Time management.
+    35 => [
+      'en' => '<ul><li>The secret to a great talk is practice. It is important to manage your time so that the session fits within the allotted duration. A volunteer will let you know when 10 and 5 minutes are left.</li><li>Don\'t use up all your time: questions are one of the most important parts of the session. Leave time for them, as they will likely touch on points from your talk. This will enrich your presentation and win over the audience.</li><li>It\'s better to go slowly and cover less than to try to cover everything at full speed, like a Roadrunner. Less is more.</li></ul>',
+      'es' => '<ul><li>El secreto para que una charla sea redonda es practicar una y otra vez. Es importante que controles los tiempos y la sesión se ajuste a la duración marcada. Una persona voluntaria te avisará cuando falten 10 y 5 minutos.</li><li>Es importante que no agotes el tiempo, ya que las preguntas son una de las partes más importantes de la sesión. Deja tiempo para esta parte en la que, muy seguramente, tocarás puntos de tu charla. Con ello conseguirás enriquecer tu intervención y ganarte al público.</li><li>Mejor ir despacio y contar menos que querer abarcar todo y ser un “Correcaminos”. Menos es más.</li></ul>',
+    ],
+    // Style and design of slides.
+    36 => [
+      'en' => '<ul><li>The organizing team recommends keeping the event\'s visual style. You can use this template: [TBD: Drupal Developer Days 2027 slide template link].</li><li>Keep it to eight lines of text per slide at most. Two readable slides are better than one that nobody can read.</li><li>Each line should have a maximum of 30 characters.</li><li>Use a font size of 28 points or larger, and be generous with line spacing.</li><li>Use few words, but choose them carefully for their meaning; this will make them easy to read and memorable for the audience.</li><li>What matters is not the slides, but you and everything you bring to the audience. Slides are a tool, not the talk!</li><li>If the content requires attention due to its complexity, divide it into sections and use diagrams. This way, you can expand or shorten your presentation on specific topics you consider relevant.</li><li>Avoid using UPPERCASE letters, as they make reading difficult, take up space, and are not attractive to your listeners. It\'s better to use bold or italics, but sparingly. We also do not recommend underlining.</li><li>The projection will be in 16:9 format (1920×1080 pixels).</li></ul>',
+      'es' => '<ul><li>La recomendación del equipo organizador es mantener la línea gráfica del evento. Para ello ponemos a vuestra disposición la siguiente plantilla: [PENDIENTE: enlace a la plantilla de Drupal Developer Days 2027].</li><li>Limita a ocho las líneas de texto por diapositiva (mejor usar dos diapositivas que una en la que no se pueda leer nada).</li><li>Cada línea debe tener un máximo de 30 caracteres.</li><li>Utiliza un tamaño de 28 puntos, o más, y no te cortes con el interlineado, que sea generoso.</li><li>Emplea pocas palabras, pero con solera en significado, así serán fáciles de leer y se quedarán grabadas en la audiencia.</li><li>Lo importante no son las diapositivas, sino la persona ponente y todo lo que vas a aportar. Las diapositivas son un recurso, ¡no son la charla!</li><li>Si el contenido requiere de atención, por su complejidad, divídelo en secciones, utiliza esquemas, de esta forma podrás ampliar o recortar tu exposición con determinados temas que consideres que son relevantes.</li><li>Evita el uso de MAYÚSCULAS, complican la lectura, ocupan espacio y no resultan atractivas para quien te está escuchando. Es mejor que apuestes por el empleo de negrita o cursiva… pero sin abusar. Tampoco te recomendamos el subrayado.</li><li>La proyección se realizará en formato 16:9 (1920×1080 píxeles).</li></ul>',
+    ],
+  ];
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load(6);
+  if (!$node instanceof ContentEntityInterface) {
+    return 'Node 6 not found. Nothing to do.';
+  }
+
+  // Walk the paragraph tree from the node so the changes are saved as new
+  // paragraph revisions referenced by the new node revision. Ancestors of a
+  // changed paragraph must be flagged too, or they will not be re-saved.
+  $update = function (ContentEntityInterface $entity) use (&$update, $texts): bool {
+    $changed = FALSE;
+    foreach (['field_sections', 'field_subsections'] as $field_name) {
+      if (!$entity->hasField($field_name)) {
+        continue;
+      }
+      foreach ($entity->get($field_name)->referencedEntities() as $paragraph) {
+        $paragraph_changed = FALSE;
+        foreach ($texts[$paragraph->id()] ?? [] as $langcode => $value) {
+          if ($paragraph->hasTranslation($langcode)) {
+            $paragraph->getTranslation($langcode)->set('field_text', [
+              'value' => $value,
+              'format' => $paragraph->get('field_text')->format,
+            ]);
+            $paragraph_changed = TRUE;
+          }
+        }
+        if ($update($paragraph) || $paragraph_changed) {
+          $paragraph->setNeedsSave(TRUE);
+          $changed = TRUE;
+        }
+      }
+    }
+    return $changed;
+  };
+
+  if (!$update($node)) {
+    return 'No paragraphs to update in node 6.';
+  }
+
+  $node->setNewRevision(TRUE);
+  $node->setRevisionLogMessage('Issue #14: Review guide for speakers for Drupal Dev Days 2027.');
+  $node->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+  $node->save();
+
+  return 'Updated "Guide for Speakers" (node 6).';
+}
+
+/**
+ * Update "Code of conduct" (node 7) for Drupal Dev Days 2027.
+ *
+ * Values marked as [TBD] are pending decisions from the organization.
+ */
+function custom_general_features_update_11004(): string {
+  $bodies = [
+    'en' => '<p>Drupal Developer Days brings together people from all over the world who use, develop, design and support Drupal. Many attendees are new to Drupal or to its community.</p><p>The <a href="https://www.drupal.org/dcoc"><strong>Drupal Code of Conduct</strong></a> outlines our shared ideals and values. This document expresses how we expect these ideals to be interpreted at our conferences and other events. Our goal is to ensure that all participants can freely and openly share ideas in a friendly, safe, and welcoming environment that fosters and inspires mutual respect and collaboration.</p>',
+    'es' => '<p>Los Drupal Developer Days reúnen a personas de todo el mundo que utilizan, desarrollan, diseñan y dan soporte a Drupal. Muchas de las personas asistentes son nuevas en Drupal o en su comunidad.</p><p>El <strong>Código de conducta de Drupal</strong> (<a href="https://www.drupal.org/dcoc">en inglés</a>) esboza nuestros ideales y valores compartidos. Este documento expresa cómo esperamos que estos ideales sean interpretados en nuestras conferencias y otros eventos. Nuestro objetivo es asegurar que todas aquellas personas participantes puedan compartir libre y abiertamente ideas en un ambiente amistoso, seguro y acogedor que fomente e inspire respeto mutuo y colaboración.</p>',
+  ];
+
+  // New paragraph field values, keyed by paragraph ID, language and field.
+  $paragraphs = [
+    // Come for the software, stay for the community.
+    23 => [
+      'en' => [
+        'field_text' => '<p><strong>Drupal simply would not exist without its community.</strong> We want everyone attending Drupal Developer Days to have an amazing experience both inside and outside the conference sessions and activities.</p><p>The purpose of this document is not to restrict the diversity of ideas and expressions in the Drupal community, but to raise awareness about the potential of actions that could alienate any participant in the community.</p>',
+      ],
+      'es' => [
+        'field_text' => '<p><strong>Drupal simplemente no existiría sin su comunidad.</strong> Queremos que todas las personas que asistan a los Drupal Developer Days tengan una experiencia estupenda tanto dentro como fuera de las sesiones y actividades de la conferencia.</p><p>El propósito de este documento no es restringir la diversidad de ideas y expresiones en la comunidad de Drupal sino crear conciencia sobre el potencial de acciones que podrían alienar a cualquier persona participante en la comunidad.</p>',
+      ],
+    ],
+    // Thoughtful event.
+    28 => [
+      'en' => [
+        'field_title' => 'Drupal Dev Days is a thoughtful event',
+        'field_text' => '<p>Drupal Developer Days is an international event that attracts <strong>diverse people</strong> from a wide variety of backgrounds, cultures and religions. We recognize that intercultural communication can be difficult, and we encourage everyone, whatever their experience, to consider how their actions affect people with different backgrounds and experiences, and to keep in mind that an offence may have been unintentional.</p>',
+      ],
+      'es' => [
+        'field_title' => 'Los Drupal Dev Days son un evento considerado',
+        'field_text' => '<p>Los Drupal Developer Days son un evento internacional que atrae a <strong>personas diversas</strong> de muy distintos orígenes, culturas y religiones. Reconocemos que la comunicación intercultural puede ser complicada y animamos a toda la comunidad, sea cual sea su experiencia, a tener en cuenta cómo afectan sus acciones a personas con distintos orígenes y experiencias, y a recordar que una ofensa puede haber sido involuntaria.</p>',
+      ],
+    ],
+    // Welcoming event.
+    25 => [
+      'en' => [
+        'field_title' => 'Drupal Dev Days is a welcoming event',
+        'field_text' => '<p>One of the greatest strengths of the Drupal <strong>community</strong> is being <strong>inclusive</strong>. Making all attendees feel welcome and included at Drupal Developer Days is a task that involves the entire community, including speakers and sponsors.</p>',
+      ],
+      'es' => [
+        'field_title' => 'Los Drupal Dev Days son un evento acogedor',
+        'field_text' => '<p>Una de las mayores fortalezas de la <strong>comunidad</strong> Drupal es ser <strong>inclusiva</strong>. Hacer que todas las personas asistentes se sientan bienvenidas e integradas en los Drupal Developer Days es un trabajo que involucra a toda la comunidad, incluyendo ponentes y patrocinadores.</p>',
+      ],
+    ],
+    // Respectful event.
+    26 => [
+      'en' => ['field_title' => 'Drupal Dev Days is a respectful event'],
+      'es' => [
+        'field_title' => 'Los Drupal Dev Days son un evento respetuoso',
+        'field_text' => '<p>Las empresas patrocinadoras, las personas ofreciendo su valioso tiempo como voluntarias u ofreciendo charla y todas las personas participantes en la conferencia deben tratar a las demás personas con <strong>dignidad y respeto</strong> independientemente de su cultura, religión, apariencia física, discapacidad, raza, etnia, sexo, orientación sexual y cualquier otra diferencia.</p>',
+      ],
+    ],
+    // Collaborative event.
+    27 => [
+      'en' => ['field_title' => 'Drupal Dev Days is a collaborative event'],
+      'es' => [
+        'field_title' => 'Los Drupal Dev Days son un evento colaborativo',
+        'field_text' => '<p>Si ocurren malentendidos, alentamos a las personas a resolver las cosas entre ellas siempre y cuando sea posible. Se anima a las personas a <strong>asumir la responsabilidad</strong> de sus palabras y acciones y a escuchar las críticas presentadas constructivamente con una mente abierta, cortesía y respeto.</p>',
+      ],
+    ],
+    // When we disagree, we consult others.
+    29 => [
+      'en' => [
+        'field_text' => '<p>If two or more participants cannot resolve issues that may arise between them, they are encouraged to seek advice from an impartial <strong>third party trusted by both</strong> or a designated community volunteer to help mediate.</p>',
+      ],
+    ],
+    // Mediators.
+    50 => [
+      'en' => [
+        'field_text' => '<p>For Drupal Developer Days Valencia 2027, [TBD: names] will act as mediators.</p>',
+      ],
+      'es' => [
+        'field_text' => '<p>Para los Drupal Developer Days Valencia 2027, [PENDIENTE: nombres] actuarán como personas mediadoras.</p>',
+      ],
+    ],
+    // When needed, we seek help.
+    51 => [
+      'en' => [
+        'field_text' => '<p><strong>We do not tolerate harassment of conference participants in any form.</strong></p><p>If any harassing behavior occurs that violates, discriminates against, or humiliates you in any way, please immediately notify a member of the Drupal Developer Days organization team.</p><p>Likewise, we ask the entire community to immediately inform a member of the organization team if you witness any of these behaviors towards others.</p><p>For particularly urgent cases, please contact any of these people:</p><ul><li>[TBD: name – contact email]</li><li>[TBD: name – contact email]</li></ul>',
+      ],
+      'es' => [
+        'field_text' => '<p><strong>No toleramos el acoso de personas participantes de la conferencia de ninguna forma.</strong></p><p>Si en algún momento ocurre alguna conducta de acoso, que te violente, discrimine o humille de cualquier manera, por favor, notifícalo inmediatamente a una persona de la organización de los Drupal Developer Days.</p><p>Asimismo, rogamos a toda la comunidad que avise inmediatamente a una persona de la organización si es testigo de alguno de estos comportamientos hacia otras personas.</p><p>Para casos especialmente urgentes, comunícate con cualquiera de estas personas:</p><ul><li>[PENDIENTE: nombre – email de contacto]</li><li>[PENDIENTE: nombre – email de contacto]</li></ul>',
+      ],
+    ],
+    // Closing text and license.
+    31 => [
+      'en' => [
+        'field_text' => '<p>The Drupal Developer Days team wants all conference participants to feel safe throughout the event. If necessary, conference staff is empowered to take appropriate actions, which may include, but are not limited to, warnings, expulsion from the conference without refund, and referrals to venue security or local police.</p><p>Thank you for making Drupal Developer Days amazing!</p><blockquote><p>The Drupal Developer Days Code of Conduct is licensed under a Creative Commons Attribution 3.0 Unported License, so other people and groups can use and adapt it for their own events.</p></blockquote>',
+      ],
+      'es' => [
+        'field_text' => '<p>El equipo de los Drupal Developer Days quiere que todas las personas participantes en la conferencia se sientan seguras durante todo el desarrollo de la misma. Si es necesario, el personal de la conferencia está facultado para tomar las acciones apropiadas que pueden incluir, pero no se limitan a, advertencias, expulsión de la conferencia sin reembolso y remisiones a la seguridad del lugar o a la policía local.</p><p>¡Gracias por hacer de los Drupal Developer Days un evento increíble!</p><blockquote><p>El Código de conducta de los Drupal Developer Days está licenciado bajo una licencia Creative Commons Attribution 3.0 Unported y está disponible para que otras personas o grupos lo puedan utilizar y adaptar para sus propios eventos.</p></blockquote>',
+      ],
+    ],
+  ];
+
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load(7);
+  if (!$node instanceof ContentEntityInterface) {
+    return 'Node 7 not found. Nothing to do.';
+  }
+
+  foreach ($bodies as $langcode => $value) {
+    if ($node->hasTranslation($langcode)) {
+      $translation = $node->getTranslation($langcode);
+      $translation->set('body', [
+        'value' => $value,
+        'format' => $translation->get('body')->format,
+      ]);
+    }
+  }
+
+  // Walk the paragraph tree from the node so the changes are saved as new
+  // paragraph revisions referenced by the new node revision. Ancestors of a
+  // changed paragraph must be flagged too, or they will not be re-saved.
+  $update = function (ContentEntityInterface $entity) use (&$update, $paragraphs): bool {
+    $changed = FALSE;
+    foreach (['field_sections', 'field_subsections'] as $field_name) {
+      if (!$entity->hasField($field_name)) {
+        continue;
+      }
+      foreach ($entity->get($field_name)->referencedEntities() as $paragraph) {
+        $paragraph_changed = FALSE;
+        foreach ($paragraphs[$paragraph->id()] ?? [] as $langcode => $values) {
+          if (!$paragraph->hasTranslation($langcode)) {
+            continue;
+          }
+          $translation = $paragraph->getTranslation($langcode);
+          foreach ($values as $field => $value) {
+            $translation->set($field, $field === 'field_text'
+              ? ['value' => $value, 'format' => $translation->get('field_text')->format]
+              : $value);
+          }
+          $paragraph_changed = TRUE;
+        }
+        if ($update($paragraph) || $paragraph_changed) {
+          $paragraph->setNeedsSave(TRUE);
+          $changed = TRUE;
+        }
+      }
+    }
+    return $changed;
+  };
+  $update($node);
+
+  $node->setNewRevision(TRUE);
+  $node->setRevisionLogMessage('Issue #14: Review code of conduct for Drupal Dev Days 2027.');
+  $node->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+  $node->save();
+
+  return 'Updated "Code of conduct" (node 7).';
+}
