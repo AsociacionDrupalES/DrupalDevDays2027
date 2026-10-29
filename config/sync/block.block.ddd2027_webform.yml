@@ -28,4 +28,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /become-sponsor
+    pages: "/become-sponsor\r\n/hazte-sponsor\r\n/hazte-patrocinador"

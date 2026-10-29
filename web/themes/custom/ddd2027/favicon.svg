@@ -1,10 +1,8 @@
-<svg width="607" height="607" viewBox="0 0 607 607" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M493.092 364.909C493.092 183.835 293.092 43 293.092 43C293.092 43 93.0918 183.835 93.0918 364.909C93.0918 418.269 114.163 469.443 151.67 507.174C189.178 544.905 240.049 566.102 293.092 566.102C346.135 566.102 397.006 544.905 434.513 507.174C472.02 469.443 493.092 418.269 493.092 364.909Z" fill="#009CDE"/>
-<path d="M178.041 489.871C296.795 593.857 504.013 543.568 504.013 543.568C504.013 543.568 526.503 331.525 407.75 227.539C372.755 196.896 327.092 181.328 280.808 184.258C234.523 187.189 191.408 208.379 160.947 243.166C130.486 277.953 115.174 323.489 118.38 369.755C121.585 416.021 143.046 459.228 178.041 489.871Z" fill="url(#paint0_radial_0_1)"/>
-<defs>
-<radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(401.193 223.42) rotate(123.69) scale(166.184 127.075)">
-<stop offset="0.15" stop-color="#FFC423"/>
-<stop offset="0.9" stop-color="#CCEDF9"/>
-</radialGradient>
-</defs>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="32" cy="32" r="31" fill="#FFFFFF"/>
+<path d="M6.3 36A26 26 0 0 1 57.7 36z" fill="#F66112"/>
+<path d="M6.3 36H57.7A26 26 0 0 1 6.3 36z" fill="#01A5D3"/>
+<path d="M32 15C26 22 21.500 28 21.500 34.500a10.500 10.500 0 0 0 21 0C42.500 28 38 22 32 15z" fill="#01A5D3" stroke="#FFFFFF" stroke-width="2.500" stroke-linejoin="round"/>
+<path d="M32 27c-2.500 3-4 5-4 7.500a4 4 0 0 0 8 0c0-2.500-1.500-4.500-4-7.500z" fill="#063D79"/>
+<circle cx="32" cy="32" r="29" stroke="#063D79" stroke-width="4"/>
 </svg>

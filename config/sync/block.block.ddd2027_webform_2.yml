@@ -28,4 +28,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /volunteers
+    pages: "/become-volunteer\r\n/hazte-voluntario"
