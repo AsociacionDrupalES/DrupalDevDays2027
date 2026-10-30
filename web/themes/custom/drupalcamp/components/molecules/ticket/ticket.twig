@@ -1,0 +1,10 @@
+<div {{ attributes.addClass(link_variant == 'disabled' ? 'ticket--disabled' : '') }}>
+  <div class="title">{{ title }}</div>
+  <div class="price">{{ price }}</div>
+  <div class="text text-formatted">{{ text }}</div>
+  {{ include(
+    'drupalcamp:link',
+    { link_title: link_text, link_uri: link_uri, variant: link_variant | default('primary') },
+    with_context = false
+  ) }}
+</div>

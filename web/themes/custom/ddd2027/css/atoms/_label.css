@@ -1,0 +1,6 @@
+label {
+  display: block;
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  font-weight: 700;
+}

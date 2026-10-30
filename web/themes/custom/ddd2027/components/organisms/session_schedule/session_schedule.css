@@ -1,0 +1,56 @@
+@import url('variables.css');
+
+.session-schedule {
+  background-color: var(--color--background-primary);
+  border: 2px solid var(--color--primary-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.session-schedule p {
+  margin: 0;
+}
+
+/* Header */
+.session-schedule-slot.session-schedule--header {
+  display: none;
+}
+
+.session-schedule-slot.session-schedule--header .highlighted-pill,
+.session-schedule-slot .session-schedule-card__type .highlighted-pill {
+  font-family: var(--font-family-h);
+  font-size: var(--session-schedule-hour-column-font-size);
+  font-weight: normal;
+  padding: 6px 20px;
+}
+
+@media (min-width: 1200px) {
+  .session-schedule-slot.session-schedule--header {
+    display: flex;
+    border-top: none;
+  }
+}
+
+.session-schedule-slot.session-schedule--header {
+  padding: 0 0 var(--space-2);
+}
+
+.session-schedule-slot.session-schedule--header .highlighted-pill {
+  background: none;
+  border: 0;
+  color: var(--color--text-muted);
+  font-family: var(--font-family);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  padding: var(--space-2) 0;
+  text-transform: uppercase;
+}
+
+.session-schedule {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+

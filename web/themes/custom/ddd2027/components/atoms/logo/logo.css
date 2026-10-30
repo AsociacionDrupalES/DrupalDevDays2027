@@ -1,0 +1,28 @@
+.header__logo .block-system-branding-block {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.header__logo .site-logo {
+  flex-shrink: 0;
+}
+
+.header__logo .logo__image {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.header__logo .site-name {
+  color: var(--color--dark-navy);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: var(--leading-tight);
+}
+
+.header__logo .site-name a {
+  color: inherit;
+  text-decoration: none;
+}

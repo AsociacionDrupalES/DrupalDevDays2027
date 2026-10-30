@@ -1,6 +1,8 @@
-FROM uselagoon/nginx:latest
+ARG CLI_IMAGE
+FROM ${CLI_IMAGE} AS cli
 
-COPY . /app
+FROM uselagoon/nginx-drupal:latest
 
-# Define where the Drupal Root is located
+COPY --from=cli /app /app
+
 ENV WEBROOT=web

@@ -1,0 +1,37 @@
+name: DDD2027
+type: theme
+'base theme': stable9
+logo: ddd2027-logo.png
+version: 1.0.0
+libraries:
+  - ddd2027/base
+  - ddd2027/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - ddd2027/user
+  core/drupal.dropbutton:
+    - ddd2027/dropbutton
+  core/drupal.dialog:
+    - ddd2027/dialog
+  file/drupal.file:
+    - ddd2027/file
+  core/drupal.progress:
+    - ddd2027/progress
+description: 'DDD2027 theme'
+core_version_requirement: ^10 | ^11
+generator: 'starterkit_theme:10.4.2'
+regions:
+  sidebar_second: 'Right sidebar'
+  title: 'Title'
+  content: 'Content'
+  header_logo: 'Header Logo'
+  header_content: 'Header Content'
+  secondary_menu: 'Secondary menu'
+  footer: 'Footer'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  breadcrumb: 'Breadcrumb'
+
+'interface translation project': ddd2027
+'interface translation server pattern': 'themes/custom/ddd2027/translations/%language.po'

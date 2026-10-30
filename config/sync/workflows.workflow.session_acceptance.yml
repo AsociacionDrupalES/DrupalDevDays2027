@@ -1,0 +1,124 @@
+uuid: 6de63ab7-3cc4-4b6c-9ff3-f475f4cafb30
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.session
+  module:
+    - content_moderation
+    - workbench_email
+  enforced:
+    config:
+      0: workbench_email.workbench_email_template.session_submitted
+      2: workbench_email.workbench_email_template.session_accepted
+      5: workbench_email.workbench_email_template.session_rejected
+third_party_settings:
+  workbench_email:
+    workbench_email_templates:
+      propose_session:
+        session_submitted: session_submitted
+      accept_session:
+        session_accepted: session_accepted
+      reject_session:
+        session_rejected: session_rejected
+      publish: {  }
+_core:
+  default_config_hash: Sb2FPWXR1ZafaWB4VM9V67-eCQQesMxTjHUlZp7SiGw
+id: session_acceptance
+label: 'Session Acceptance'
+type: content_moderation
+type_settings:
+  states:
+    accepted:
+      label: Aceptada
+      weight: -1
+      published: true
+      default_revision: true
+    draft:
+      label: Propuesta
+      weight: -3
+      published: false
+      default_revision: false
+    proposed:
+      label: 'Propuesta validada'
+      weight: -2
+      published: true
+      default_revision: true
+    published:
+      label: Publicado
+      weight: 2
+      published: true
+      default_revision: true
+    rejected:
+      label: Rechazada
+      weight: 1
+      published: false
+      default_revision: true
+    waiting_list:
+      label: 'Lista de espera'
+      weight: 0
+      published: false
+      default_revision: true
+  transitions:
+    accept_session:
+      label: 'Aceptar sesión'
+      from:
+        - accepted
+        - proposed
+        - rejected
+        - waiting_list
+      to: accepted
+      weight: -1
+    propose_session:
+      label: 'Proponer propuesta'
+      from:
+        - accepted
+        - draft
+        - published
+        - rejected
+      to: draft
+      weight: -3
+    publish:
+      label: Publicar
+      from:
+        - accepted
+        - draft
+        - proposed
+        - published
+        - rejected
+        - waiting_list
+      to: published
+      weight: 2
+    reject_session:
+      label: 'Rechazar sesión'
+      from:
+        - accepted
+        - proposed
+        - rejected
+        - waiting_list
+      to: rejected
+      weight: 1
+    validate_proposal:
+      label: 'Validar propuesta'
+      from:
+        - accepted
+        - draft
+        - proposed
+        - published
+        - rejected
+        - waiting_list
+      to: proposed
+      weight: -2
+    waiting_list:
+      label: 'Lista de espera'
+      from:
+        - accepted
+        - proposed
+        - rejected
+        - waiting_list
+      to: waiting_list
+      weight: 0
+  entity_types:
+    node:
+      - session
+  default_moderation_state: draft

@@ -1,0 +1,50 @@
+.block-views-blockall-sponsors-ddd2027-block-1 {
+  padding: var(--space-16) 0;
+  position: relative;
+}
+
+.block-views-blockall-sponsors-ddd2027-block-1:before {
+  background: white;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+  height: 100%;
+  z-index: -1;
+}
+
+.block-views-blockall-sponsors-ddd2027-block-1 h2 {
+  color: var(--color--dark-navy);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.sponsors-logos .sponsor-level-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-8);
+}
+
+.sponsors-logos .sponsor-level-group h3 {
+  color: var(--color--text-muted);
+  font-family: var(--font-family);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-3);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}

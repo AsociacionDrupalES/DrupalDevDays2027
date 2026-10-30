@@ -1,0 +1,12 @@
+.header__logo .logo__image {
+  height: 50px;
+  width: auto;
+
+  @media (min-width: 1200px) {
+    height: 70px;
+  }
+}
+
+.header__logo .site-name {
+  display: none;
+}

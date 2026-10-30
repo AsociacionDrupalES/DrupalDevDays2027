@@ -1,0 +1,29 @@
+uuid: f04cf4e1-7a4d-447d-a4a5-6325e524f277
+langcode: es
+status: true
+dependencies:
+  module:
+    - custom_general_features
+    - system
+  theme:
+    - ddd2027
+id: ddd2027_become_sponsor
+theme: ddd2027
+region: content
+weight: 0
+provider: null
+plugin: custom_general_features_become_sponsor
+settings:
+  id: custom_general_features_become_sponsor
+  label: '¿Cómo llego al Drupal Dev Days?'
+  label_display: '0'
+  provider: custom_general_features
+  title: '¿Cómo llego al Drupal Dev Days?'
+  body:
+    value: '<p>Toda la información para llegar al evento sin complicaciones, en un solo sitio. ¡Nos vemos pronto!</p><p><a class="link--button link--button--secondary" href="es/sobre-el-venue">Saber más</a></p>'
+    format: full_html
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/sesiones/*'

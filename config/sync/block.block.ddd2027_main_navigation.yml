@@ -1,0 +1,27 @@
+uuid: 519c0792-14d2-48de-aa64-a59dc96dfedf
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: w4aWEVh91pptbJl6umUHmXkfXhWF2PlNj-AB4harQ_0
+id: ddd2027_main_navigation
+theme: ddd2027
+region: header_content
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navegación principal'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }
