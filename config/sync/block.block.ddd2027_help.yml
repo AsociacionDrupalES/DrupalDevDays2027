@@ -1,0 +1,22 @@
+uuid: df32e7a8-91f7-494c-8cbd-86587f57059f
+langcode: es
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: POA2DL8HnLs6eacbARLWiG5XpTu8kOfqrvLkcX4XSxQ
+id: ddd2027_help
+theme: ddd2027
+region: content
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ayuda
+  label_display: '0'
+  provider: help
+visibility: {  }

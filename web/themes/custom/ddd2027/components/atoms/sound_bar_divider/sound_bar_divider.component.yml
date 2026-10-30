@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Sound bar divider"
+description: "Barras estilo ecualizador, divisor de sección insignia de la marca."
+status: stable
+props:
+  type: object
+  properties:
+    color:
+      type: string
+      title: Color
+      description: "Color de fondo de las barras."
+      default: "var(--color--accent)"
+    height:
+      type: number
+      title: Height
+      description: "Alto máximo del contenedor, en píxeles. Controla también el ancho de barra y el gap (mismas fórmulas que el diseño original: ancho = max(3px, altura/10), gap = max(2px, altura/12))."
+      default: 40

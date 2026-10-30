@@ -1,0 +1,28 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Session schedule card
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:session_schedule_card' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:session_schedule_card'
+props:
+  type: object
+  properties:
+    categories:
+      type: array
+      title: Categories
+      description: "Array of category IDs for the session"
+      items:
+        type: string
+slots:
+  title:
+    title: Title
+  pre_tags:
+    title: Pre-tags
+  tags:
+    title: Tags
+  speakers:
+    title: Speakers
+  type:
+    title: Type

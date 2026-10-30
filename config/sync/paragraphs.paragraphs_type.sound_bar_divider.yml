@@ -1,0 +1,17 @@
+uuid: 01c4e5e2-b05b-4d38-9225-6ce238530cb0
+langcode: es
+status: true
+dependencies:
+  module:
+    - custom_paragraphs_extras
+id: sound_bar_divider
+label: 'Divisor de barras'
+icon_uuid: null
+icon_default: null
+description: 'Barras tipo ecualizador decorativas (componente sound_bar_divider) para separar secciones. Sin contenido; el color de las barras y el fondo se eligen en Configuración.'
+behavior_plugins:
+  custom_background_behavior:
+    enabled: true
+    image_style: full_width
+  custom_color:
+    enabled: true

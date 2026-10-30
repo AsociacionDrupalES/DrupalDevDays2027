@@ -1,0 +1,31 @@
+uuid: 96366649-5141-4daf-8650-536d1dd93d7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.ddd2027_become_a_sponsor
+  module:
+    - system
+    - webform
+  theme:
+    - ddd2027
+id: ddd2027_webform
+theme: ddd2027
+region: content
+weight: -2
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Become a Sponsor'
+  label_display: visible
+  provider: webform
+  webform_id: ddd2027_become_a_sponsor
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/become-sponsor\r\n/hazte-sponsor\r\n/hazte-patrocinador"

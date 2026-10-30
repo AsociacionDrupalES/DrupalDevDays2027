@@ -1,0 +1,63 @@
+{
+    "_hash": "bb5eb74844373a4be79799d8f655889e76a05252d8d528443a2cb2f643f8bc71",
+    "patches": {
+        "drupal/event_platform": [
+            {
+                "package": "drupal/event_platform",
+                "description": "Add support to multiple categories in session content type",
+                "url": "./patches/scheduler-support-multiple-categories.patch",
+                "sha256": "7158b55cb8dfcc19d013db92fa423c436088dbd06cb49cf1c8a203c3c31befc3",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            },
+            {
+                "package": "drupal/event_platform",
+                "description": "Order slot times by weight in scheduler",
+                "url": "./patches/scheduler-order-slots-by-weight.patch",
+                "sha256": "9550fe769dd1d698af52c6f125c416b049784ea11331475bc8f1a89b7996bb21",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/field_group": [
+            {
+                "package": "drupal/field_group",
+                "description": "#3495221: Add $form and $form_state parameters to formatter plugins' settingsForm method Add $form and $form_state parameters to formatter plugins' settingsForm method",
+                "url": "https://www.drupal.org/files/issues/2024-12-20/3495221-4.patch",
+                "sha256": "573a11920da806371146f2898a1af981b6826ec39d03b72803528db97e8a0f97",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/paragraphs": [
+            {
+                "package": "drupal/paragraphs",
+                "description": "https://www.drupal.org/project/paragraphs/issues/3473771",
+                "url": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/150/diffs.diff",
+                "sha256": "f785286a3805a3316b0e25a833d1502e72f15043c7dc991ebc987bb929c70854",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/potx": [
+            {
+                "package": "drupal/potx",
+                "description": "[https://dgo.to/2641334] - Drush Support for extracting strings in the theme files",
+                "url": "https://www.drupal.org/files/issues/2024-08-03/drush_support_for_extracting_strings_from_the_theme_files-2641334-26.patch",
+                "sha256": "d52740966db328f9798691b6e0bf310d9d416b83a7dc94367ffe84e439c84ef4",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

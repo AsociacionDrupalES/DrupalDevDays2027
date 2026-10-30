@@ -1,0 +1,27 @@
+uuid: d17d015e-753c-4976-acd0-989b4fba0e94
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: XwObwPQqNy5uYHeOcjSFCMK1O379_HnybZt-LVyvHcM
+id: ddd2027_footer
+theme: ddd2027
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Pie de página'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

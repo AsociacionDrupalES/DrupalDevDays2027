@@ -1,0 +1,23 @@
+uuid: 3448bea2-c147-4c86-9af8-e687ef642b88
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_badge
+    - node.type.featured_speaker
+_core:
+  default_config_hash: 1IVDfYcVrXVK6juGghDbFvAplqPOxb1pRAVHmQOaVv0
+id: node.featured_speaker.field_badge
+field_name: field_badge
+entity_type: node
+bundle: featured_speaker
+label: Badge
+description: 'Badge que aparece en la parte inferior de la imagen del ponente (ej. "Ponente")'
+required: false
+translatable: true
+default_value:
+  -
+    value: Ponente
+default_value_callback: ''
+settings: {  }
+field_type: string

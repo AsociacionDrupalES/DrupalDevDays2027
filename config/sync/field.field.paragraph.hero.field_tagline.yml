@@ -1,0 +1,19 @@
+uuid: 3c6315e3-583b-47bd-9280-653a04c5ffa0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tagline
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_tagline
+field_name: field_tagline
+entity_type: paragraph
+bundle: hero
+label: Tagline
+description: 'Frase corta que se muestra en cian bajo el título del hero. Opcional.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

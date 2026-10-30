@@ -1,0 +1,30 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Highlighted pill
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:highlighted-pill' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:highlighted-pill'
+slots:
+  name:
+    title: Name
+  url:
+    title: URL
+props:
+  type: object
+  properties:
+    background_color:
+      type: string
+      title: Background color
+      enum:
+        - primary
+        - primary-light
+        - secondary
+        - accent
+        - dark-navy
+    size:
+      type: string
+      title: Size
+      enum:
+        - tiny

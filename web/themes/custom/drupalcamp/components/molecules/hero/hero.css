@@ -1,0 +1,98 @@
+[data-component-id="drupalcamp:hero"] {
+  align-items: center;
+  /* color: white; */
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 90vh;
+  padding-top: 90px;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="drupalcamp:hero"] {
+    padding-top: 50px;
+  }
+}
+
+/* [data-component-id="drupalcamp:hero"]:before {
+  background-color: rgba(0, 0, 0, 0.38);
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+  z-index: -1;
+} */
+
+[data-component-id="drupalcamp:hero"] h2 {
+  margin: 0;
+}
+
+[data-component-id="drupalcamp:hero"] p {
+  margin: 0;
+  line-height: 1;
+}
+
+[data-component-id="drupalcamp:hero"] .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+[data-component-id="drupalcamp:hero"] .text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="drupalcamp:hero"] .content-wrapper {
+    flex-wrap: nowrap;
+  }
+}
+
+[data-component-id="drupalcamp:hero"] .content-wrapper .text-wrapper {
+  font-size: calc(var(--font-size) * 1.55);
+  line-height: calc(var(--font-line-height) * 1.38);
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="drupalcamp:hero"] .content-wrapper .text-wrapper {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  [data-component-id="drupalcamp:hero"] .content-wrapper .text-wrapper {
+    max-width: calc(50% - 2rem);
+    padding-left: 2rem;
+  }
+}
+
+[data-component-id="drupalcamp:hero"] .content-wrapper .text-wrapper .link--button {
+  font-size: calc(var(--font-size));
+  line-height: calc(var(--font-line-height));
+}
+
+[data-component-id="drupalcamp:hero"] .content-wrapper .logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* [data-component-id="drupalcamp:hero"] .content-wrapper .logo img {
+  max-width: 191px;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="drupalcamp:hero"] .content-wrapper .logo img {
+    max-width: 276px;
+  }
+} */
+
+@media (min-width: 768px) {
+  [data-component-id="drupalcamp:hero"] .content-wrapper .logo {
+    text-align: right;
+  }
+}

@@ -1,0 +1,21 @@
+[data-component-id="ddd2027:wave_divider"] {
+  --wave-color: var(--color--secondary);
+  --wave-background: transparent;
+
+  background: var(--wave-background);
+  line-height: 0;
+}
+
+[data-component-id="ddd2027:wave_divider"].wave-divider--flip {
+  transform: scaleY(-1);
+}
+
+[data-component-id="ddd2027:wave_divider"] .wave-divider__svg {
+  display: block;
+  width: 100%;
+  height: 32px;
+}
+
+[data-component-id="ddd2027:wave_divider"] .wave-divider__svg path {
+  stroke: var(--wave-color);
+}

@@ -1,0 +1,28 @@
+uuid: 99d4e5d0-e93e-40c7-8a62-9519b15e9ae9
+langcode: es
+status: true
+dependencies:
+  config:
+    - workflows.workflow.editorial
+    - workflows.workflow.session_acceptance
+_core:
+  default_config_hash: lasF02_9chyECp4XSiZB3HDBnjenDE5LHO9WEaPVcvM
+id: session_submitted
+label: 'Sesión enviada'
+format: plain_text
+subject: 'Sesión "[node:title]" enviada a [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]'
+recipient_types:
+  author:
+    id: author
+    provider: workbench_email
+    status: true
+    settings: {  }
+bundles: {  }
+body:
+  value: "Hola,\r\n\r\nEn nombre de nuestro equipo, gracias por enviar tu sesión \"[node:title]\" a [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]. Queremos trasladarte nuestro enorme agradecimiento.\r\n\r\nTu sesión ya está disponible en [node:url], pero será publicada una vez que el equipo local revise y confirme que todo el contenido es correcto. Recibirás un correo electrónico cuando esto ocurra.\r\n\r\nImportante: asegúrate de rellenar todos los campos (foto, biografía, etc.) de tu perfil de usuario/a en [node:author:edit-url].\r\n\r\nEn [site:url]/criterios-de-seleccion-de-charlas y [site:url]/guia-para-ponentes encontrarás respuesta a las preguntas más frecuentes relacionadas con las intervenciones. Responde a este correo electrónico si tienes más preguntas.\r\n\r\nGracias de nuevo,\r\n\r\n-- Equipo de [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]\r\n\r\n"
+  format: plain_text
+replyTo: '[site:mail]'
+transitions:
+  editorial: {  }
+  session_acceptance:
+    propose_session: propose_session

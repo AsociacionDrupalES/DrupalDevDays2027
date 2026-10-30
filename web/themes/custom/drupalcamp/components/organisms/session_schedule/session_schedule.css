@@ -1,0 +1,39 @@
+@import url('variables.css');
+
+.session-schedule {
+  background-color: #ffffff;
+  border: 2px solid var(--color--primary-light);
+  border-radius: 12px;
+  padding: 20px;
+  --font-size-h3: 1.4em;
+}
+
+.session-schedule p {
+  margin: 0;
+}
+
+/* Header */
+.session-schedule-slot.session-schedule--header {
+  display: none;
+}
+
+.session-schedule-slot.session-schedule--header .highlighted-pill,
+.session-schedule-slot .session-schedule-card__type .highlighted-pill {
+  font-family: var(--font-family-h);
+  font-size: var(--session-schedule-hour-column-font-size);
+  font-weight: normal;
+  padding: 6px 20px;
+}
+
+@media (min-width: 1200px) {
+  .session-schedule-slot.session-schedule--header {
+    display: flex;
+    border-top: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .session-schedule-slot.session-schedule--header .highlighted-pill {
+    --session-schedule-hour-column-font-size: 1.3rem;
+  }
+}

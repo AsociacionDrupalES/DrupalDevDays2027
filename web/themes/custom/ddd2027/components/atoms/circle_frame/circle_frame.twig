@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Circle frame component.
+ *
+ * Contenedor circular para retratos de speakers, badges de sponsors o
+ * iconos de track. Recibe una imagen (prop `image_url`) recortada con
+ * object-fit: cover, o un icono/glyph (slot `content`) — uno u otro, no
+ * ambos a la vez.
+ *
+ * @param {number} size - Ancho/alto del círculo en px.
+ * @param {string} image_url - Ruta de la imagen (excluyente con el slot content).
+ * @param {string} alt_text - Texto alternativo de la imagen.
+ */
+#}
+<div {{ attributes.addClass('circle-frame') }} style="--circle-frame-size: {{ size|default(96) }}px;">
+  {% if image_url %}
+    <img class="circle-frame__image" src="{{ image_url }}" alt="{{ alt_text|default('') }}">
+  {% else %}
+    <div class="circle-frame__content">{{ content }}</div>
+  {% endif %}
+</div>

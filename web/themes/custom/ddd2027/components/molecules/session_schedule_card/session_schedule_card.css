@@ -1,0 +1,147 @@
+[data-component-id="ddd2027:session_schedule_card"] {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background: var(--color--background-primary);
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: var(--border-width-hairline) solid var(--color--border);
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+}
+
+[data-component-id="ddd2027:session_schedule_card"]:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  [data-component-id="ddd2027:session_schedule_card"] {
+    height: 100%;
+  }
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__content a {
+  font-family: var(--font-family-h);
+  font-size: var(--text-body);
+  text-decoration: none;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__content a:hover {
+  text-decoration: underline;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers {
+  display: block;
+  gap: 8px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers .profile {
+  display: inline-block;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers .avatar {
+  display: none;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers img,
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers svg {
+  display: none;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline {
+  margin: 0;
+  gap: 14px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__pre-tags {
+  gap: 12px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__pre-tags li:not([class*="tag__color-"]),
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__pre-tags li:not([class*="tag__color-"]):hover {
+  background-color: var(--color--secondary-pale);
+  color: var(--color--dark-navy);
+  border: 1.5px solid var(--color--secondary);
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__tags li {
+  font-size: var(--text-small);
+  padding: 0 8px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__tags li:hover {
+  border-color: var(--color--primary-light);
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline li {
+  width: fit-content;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__type .highlighted-pill {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  [data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__type {
+    display: none;
+  }
+}
+
+[data-component-id="ddd2027:session_schedule_card"] {
+  gap: var(--space-3);
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__content a {
+  color: var(--color--dark-navy);
+  font-family: var(--font-family);
+  font-size: var(--text-body);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__meta ul.ul--pills--inline,
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__meta ul.ul--pills--inline.session-schedule-card__pre-tags {
+  display: contents;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__pre-tags li {
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  padding: 4px 12px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__tags li,
+[data-component-id="ddd2027:session_schedule_card"] ul.ul--pills--inline.session-schedule-card__tags li:hover {
+  border: var(--border-width-hairline) solid var(--color--border);
+  border-radius: var(--radius-sm);
+  color: var(--color--text-muted);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: var(--leading-normal);
+  padding: 3px 10px;
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers {
+  color: var(--color--text-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  margin-top: var(--space-2);
+}
+
+[data-component-id="ddd2027:session_schedule_card"] .session-schedule-card__speakers a {
+  color: inherit;
+  text-decoration: none;
+}
+

@@ -1,0 +1,59 @@
+display:
+  default:
+    display_options:
+      header:
+        result:
+          content: '<div class="results-summary"><strong>Results:</strong> @total proposals</div>'
+        propose_session_link:
+          label: 'Propose a session'
+      footer:
+        result:
+          content: '<div class="results-summary"><strong>Results:</strong> @total proposals</div>'
+        propose_session_link:
+          label: 'Propose a session'
+      empty:
+        propose_session_link:
+          label: 'Propose a session'
+        area_text_custom:
+          content: 'There are no sessions submitted that meet this criteria.'
+      filters:
+        field_is_training_value:
+          expose:
+            label: 'Is training'
+          group_info:
+            label: 'Is training'
+            group_items:
+              2:
+                title: 'Yes'
+        field_language_value:
+          expose:
+            label: Language
+        field_audience_target_id:
+          expose:
+            label: Audience
+        field_session_category_target_id:
+          expose:
+            label: Category
+        combine:
+          expose:
+            label: Search
+      title: 'Submitted Sessions'
+      fields:
+        title:
+          separator: ', '
+        body:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+    display_title: Default
+  page_1:
+    display_title: Page
+    display_options:
+      menu:
+        title: Sessions
+label: 'Session List'

@@ -1,0 +1,36 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Link
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:link' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:link'
+variants:
+  primary:
+    title: Primary
+  primary-light:
+    title: Light primary
+  primary-medium:
+    title: Medium primary
+  secondary:
+    title: Secondary
+  cyan:
+    title: Cyan
+  accent:
+    title: Accent
+  white:
+    title: White
+  transparent:
+    title: Transparent
+  disabled:
+    title: Disabled
+props:
+  type: object
+  properties:
+    link_title:
+      type: string
+      title: Link title
+    link_uri:
+      "$ref": ui-patterns://url
+      title: Link uri

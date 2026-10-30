@@ -1,0 +1,25 @@
+.paragraph--type--paragraphs-set > .field__items > .field__item > .paragraph:not(.paragraph--type--links,.paragraph--type--card) {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.paragraph--type--paragraphs-set:not(.component-background-color, .component-background-image):has(> .field--name-field-subsections > .field__item > .paragraph--type--tickets) {
+  position: relative;
+}
+
+.paragraph--type--paragraphs-set:not(.component-background-color, .component-background-image):has(> .field--name-field-subsections > .field__item > .paragraph--type--tickets)::before {
+  background-color: var(--blue-50);
+  content: "";
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+  z-index: -1;
+}
+
+.paragraph--type--paragraphs-set > .field--name-field-subsections > .field__item:has(> .paragraph--type--text) + .field__item > .paragraph--type--images {
+  padding-top: var(--space-8);
+}
+

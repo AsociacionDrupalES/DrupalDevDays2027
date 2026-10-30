@@ -1,0 +1,28 @@
+uuid: b9e17a66-e457-47cc-8e7a-2f896f9311c5
+langcode: es
+status: true
+dependencies:
+  config:
+    - workflows.workflow.editorial
+    - workflows.workflow.session_acceptance
+_core:
+  default_config_hash: QEyK9DzPHN_KkdZWGhhhv4NyjY4XA8eKY8zylCjk7Vs
+id: session_rejected
+label: 'Sesión rechazada'
+format: plain_text
+subject: 'Sesión de [config_page:event_details:field_event_name], [node:title]'
+recipient_types:
+  author:
+    id: author
+    provider: workbench_email
+    status: true
+    settings: {  }
+bundles: {  }
+body:
+  value: "Hola,\r\n\r\nEn nombre de nuestro equipo, gracias por enviar tu sesión \"[node:title]\" a [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]. Queremos trasladarte nuestro enorme agradecimiento.\r\n\r\nLamentablemente, no pudimos aceptar todas las excelentes sesiones que se presentaron, y esta sesión no pasó el corte de esta edición. \r\n\r\nNo obstante, esperamos verte en [config_page:event_details:field_event_location_short] este año. Si tienes alguna pregunta, ponte en contacto con la organización. \r\n\r\nGracias de nuevo,\r\n\r\n-- Equipo de [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]\r\n"
+  format: plain_text
+replyTo: '[site:mail]'
+transitions:
+  editorial: {  }
+  session_acceptance:
+    reject_session: reject_session

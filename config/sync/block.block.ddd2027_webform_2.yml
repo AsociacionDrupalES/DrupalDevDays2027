@@ -1,0 +1,31 @@
+uuid: b31efb22-a305-462b-89d2-d33283391227
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.become_a_volunteer
+  module:
+    - system
+    - webform
+  theme:
+    - ddd2027
+id: ddd2027_webform_2
+theme: ddd2027
+region: content
+weight: -1
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Become a Volunteer'
+  label_display: visible
+  provider: webform
+  webform_id: become_a_volunteer
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/become-volunteer\r\n/hazte-voluntario"

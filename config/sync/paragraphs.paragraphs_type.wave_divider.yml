@@ -1,0 +1,17 @@
+uuid: 52f25af0-52d7-4cdf-b151-b261ac3302c1
+langcode: es
+status: true
+dependencies:
+  module:
+    - custom_paragraphs_extras
+id: wave_divider
+label: 'Divisor de ola'
+icon_uuid: null
+icon_default: null
+description: 'Línea ondulada decorativa (componente wave_divider) para separar secciones. Sin contenido; el color del trazo y el fondo se eligen en Configuración.'
+behavior_plugins:
+  custom_background_behavior:
+    enabled: true
+    image_style: full_width
+  custom_color:
+    enabled: true

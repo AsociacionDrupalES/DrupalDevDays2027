@@ -1,0 +1,23 @@
+uuid: 1704e556-a6eb-4a97-8202-eead505225ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured
+    - paragraphs.paragraphs_type.ticket
+id: paragraph.ticket.field_featured
+field_name: field_featured
+entity_type: paragraph
+bundle: ticket
+label: Destacada
+description: 'Marca la entrada como destacada (tarjeta en azul marino, como la "Regular" del design system).'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Sí
+  off_label: 'No'
+field_type: boolean

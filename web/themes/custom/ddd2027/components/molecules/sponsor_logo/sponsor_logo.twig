@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Sponsor logo component.
+ *
+ * Logo de un patrocinador. La agrupación por nivel (tier) la sigue haciendo
+ * Views (`views.view.all_sponsors_ddd2027`), este componente solo resuelve UN
+ * sponsor. El tier "individual" usa un layout distinto (avatar circular vía
+ * `circle_frame` + nombre visible); el resto de tiers es una tarjeta con el
+ * logo, con el nombre oculto visualmente pero accesible para lectores de
+ * pantalla (mismo patrón `visually-hidden` que usa footer.twig en los
+ * enlaces sociales). Si no hay logo, la tarjeta muestra el nombre como
+ * texto (M5, como el `<span>` de respaldo de SponsorLogo.jsx).
+ *
+ * @param {string} name - Nombre del patrocinador.
+ * @param {string} logo - URL del logo.
+ * @param {string} tier - platinum|gold|silver|bronze|media|individual.
+ * @param {string} link - URL de destino del sponsor.
+ */
+#}
+{% set is_individual = tier == 'individual' %}
+{% set attributes = tier ? attributes.addClass('sponsor-logo__tier-' ~ tier) : attributes %}
+<div {{ attributes.addClass('sponsor-logo') }}>
+  {% if link %}
+    <a href="{{ link }}" class="sponsor-logo__link" target="_blank">
+  {% endif %}
+    {% if is_individual %}
+      {{ include(
+        'ddd2027:circle_frame',
+        { size: 55, image_url: logo, alt_text: name },
+        with_context = false
+      ) }}
+      <span class="sponsor-logo__name">{{ name }}</span>
+    {% else %}
+      {% if logo %}
+        <img class="sponsor-logo__image" src="{{ logo }}" alt="">
+        <span class="visually-hidden">{{ name }}</span>
+      {% else %}
+        <span class="sponsor-logo__fallback">{{ name }}</span>
+      {% endif %}
+    {% endif %}
+  {% if link %}
+    </a>
+  {% endif %}
+</div>
