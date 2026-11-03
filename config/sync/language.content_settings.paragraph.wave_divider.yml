@@ -1,0 +1,18 @@
+uuid: cf02e7ff-3ae3-4de4-aa43-c5247f9a4a88
+langcode: es
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wave_divider
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.wave_divider
+target_entity_type_id: paragraph
+target_bundle: wave_divider
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,31 @@
+uuid: 371c83d6-a320-4470-93d7-08614b50445b
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.count_yourself_in
+  module:
+    - system
+    - webform
+  theme:
+    - ddd2027
+id: ddd2027_webform_3
+theme: ddd2027
+region: content
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Count Yourself In!'
+  label_display: visible
+  provider: webform
+  webform_id: count_yourself_in
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/sobre-los-drupaldevdays\r\n/about-drupaldevdays"

@@ -1,0 +1,12 @@
+.align--center [data-component-id="ddd2027:text"] {
+  text-align: center;
+}
+
+.align--center [data-component-id="ddd2027:text"] .title-bar {
+  justify-content: center;
+}
+
+.align--center [data-component-id="ddd2027:text"] > .text {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,45 @@
+:root {
+  --font-family: 'Inter', system-ui, sans-serif;
+  --font-family-h: 'Inter', system-ui, sans-serif;
+  --font-size: 1rem;
+  --font-size-h1: calc(var(--font-size) * 2.5);
+  --font-size-h2: calc(var(--font-size) * 1.88);
+  --font-size-h3: calc(var(--font-size) * 1.5);
+  --font-line-height: 1.5rem;
+  --font-line-height-h1: calc(var(--font-line-height) * 1.7);
+  --font-line-height-h2: calc(var(--font-line-height) * 1.5);
+  --font-line-height-h3: calc(var(--font-line-height) * 1.3);
+  --color--primary: #12285F;
+  --color--secondary: oklch(0.8235 0.0824 298.8 / 0.35);
+  --color--primary-medium: #006AA9;
+  --color--primary-light: oklch(0.9261 0.0381 221.76 / 0.5);
+  --color--accent: oklch(0.8505 0.1675 85.51 / 0.35);
+  --color--gray: #f3f2f1;
+  --color--degree-1: #88ad80;
+  --color--degree-2: #cfb949;
+  --color--background-primary: #fff;
+  --color--background-secondary: var(--color--primary);
+  --color--background-primary-medium:  #fff;
+  --color--background-primary-light: var(--color--primary);
+  --page-side-margin: 0px;
+  --transition: all 0.3s ease;
+  --bg-img: none;
+  --bg-img-blend-mode: normal;
+  --bg-img-size: auto;
+  --max-width: 1235px;
+  --gutter-x: 20px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size: 1.125rem;
+    --font-size-h1: calc(var(--font-size) * 4.7);
+    --font-size-h2: calc(var(--font-size) * 2);
+    --font-size-h3: calc(var(--font-size) * 1.8);
+    --font-line-height: 1.687rem;
+    --font-line-height-h1: calc(var(--font-line-height) * 3);
+    --font-line-height-h2: calc(var(--font-line-height) * 1.778);
+    --font-line-height-h3: calc(var(--font-line-height) * 1.3);
+    --gutter-x: 16px;
+  }
+}

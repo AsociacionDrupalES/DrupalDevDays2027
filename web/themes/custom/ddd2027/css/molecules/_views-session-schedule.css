@@ -1,0 +1,59 @@
+.view-session-schedule.view-display-id-attachment_1 {
+  margin-top: 54px;
+}
+
+.view-session-schedule.view-display-id-attachment_1 nav ul {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  list-style: none;
+  margin-block: var(--space-6);
+  padding: 0;
+}
+
+.view-session-schedule.view-display-id-attachment_1 nav ul li {
+  flex: 1 1 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.view-session-schedule.view-display-id-attachment_1 nav ul li a {
+  background-color: #fff;
+  border: 2px solid var(--color--border);
+  border-radius: var(--radius-full);
+  box-sizing: border-box;
+  color: var(--color--dark-navy);
+  display: block;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: var(--leading-normal);
+  padding: 10px 8px;
+  text-align: center;
+  text-shadow: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.view-session-schedule.view-display-id-attachment_1 nav ul li a:hover {
+  border-color: var(--color--dark-navy);
+  text-shadow: none;
+}
+
+.view-session-schedule.view-display-id-attachment_1 nav ul li a.highlighted-pill--active,
+.view-session-schedule.view-display-id-attachment_1 nav ul li a.highlighted-pill--active:hover {
+  background-color: var(--color--accent);
+  border-color: var(--color--accent);
+  color: var(--color--background-primary);
+}
+
+@media (min-width: 640px) {
+  .view-session-schedule.view-display-id-attachment_1 nav ul li {
+    flex: none;
+  }
+
+  .view-session-schedule.view-display-id-attachment_1 nav ul li a {
+    padding: 10px 24px;
+    width: auto;
+  }
+}

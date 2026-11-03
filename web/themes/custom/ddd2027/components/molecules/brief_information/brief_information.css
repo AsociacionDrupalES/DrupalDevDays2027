@@ -1,0 +1,35 @@
+[data-component-id="ddd2027:brief_information"] {
+  background: var(--color--background-primary);
+  border: var(--border-width-hairline) solid var(--color--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  width: 100%;
+}
+
+[data-component-id="ddd2027:brief_information"] .icon {
+  display: none;
+}
+
+[data-component-id="ddd2027:brief_information"] .title {
+  color: var(--color--accent);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+[data-component-id="ddd2027:brief_information"] .text {
+  color: var(--color--text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}
+
+[data-component-id="ddd2027:brief_information"] .text strong {
+  color: var(--color--dark-navy);
+}

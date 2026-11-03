@@ -1,0 +1,30 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Sponsor logo"
+description: "Logo de un patrocinador individual con tratamiento visual distinto según su nivel de patrocinio (tier). Traducción a SDC del render actual (Views puro, sin componente) de la vista `all_sponsors` — ver dev_utils/redesign-ddd2027/03-nuevos-componentes/SponsorLogo.prompt.md. No sustituye todavía la agrupación por nivel que hace Views, solo renderiza un sponsor individual."
+status: stable
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+      description: "Nombre del patrocinador (campo `title` del nodo `sponsor`)."
+    logo:
+      type: string
+      title: Logo
+      description: "URL de la imagen del logo (campo `field_sponsor_logo`)."
+    tier:
+      type: string
+      title: Tier
+      description: "Nivel de patrocinio (campo `field_sponsor_level`, taxonomía `sponsor_level`). Determina el tamaño del logo y si se usa el layout de patrocinador individual."
+      enum:
+        - platinum
+        - gold
+        - silver
+        - bronze
+        - media
+        - individual
+    link:
+      "$ref": ui-patterns://url
+      title: Link
+      description: "URL de destino del sponsor (campo `field_website_address`)."

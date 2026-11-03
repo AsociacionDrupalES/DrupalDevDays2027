@@ -1,0 +1,19 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Carousel
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:carousel' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:carousel'
+slots:
+  slides:
+    title: Slides
+libraryOverrides:
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css: { type: external, minified: true }
+      carousel.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js: { type: external, minified: true }
+    carousel.js: {}

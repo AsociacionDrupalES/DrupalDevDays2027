@@ -1,0 +1,14 @@
+[data-component-id="ddd2027:links"] > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="ddd2027:links"] > div {
+    gap: var(--space-10);
+  }
+}
+

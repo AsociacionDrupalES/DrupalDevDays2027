@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Paragraph "Divisor de ola" (wave_divider): sin campos, solo pinta el
+ * componente SDC ddd2027:wave_divider a sangre completa entre secciones.
+ * El color del trazo sale del behavior custom_color (Configuración); sin
+ * valor, o con "- Ninguno -" (se guarda como `transparent`), usa el cian
+ * por defecto del componente.
+ */
+#}
+{% set color = paragraph.getBehaviorSetting('custom_color', 'color') %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ include('ddd2027:wave_divider', {
+    color: color and color not in ['transparent', 'disabled'] ? 'var(--color--' ~ color ~ ')' : null,
+  }, with_context = false) }}
+</div>

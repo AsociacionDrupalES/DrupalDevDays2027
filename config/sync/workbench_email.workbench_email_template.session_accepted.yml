@@ -1,0 +1,28 @@
+uuid: 80709f06-ee43-4eca-b9c8-361480d056c8
+langcode: es
+status: true
+dependencies:
+  config:
+    - workflows.workflow.editorial
+    - workflows.workflow.session_acceptance
+_core:
+  default_config_hash: iRoDtqofNhDUmp66XAINfGuiDSAb7MFe0_b3PC-hUfo
+id: session_accepted
+label: 'Sesión aceptada'
+format: plain_text
+subject: '🎉 [node:title] ha sido aceptada en [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]'
+recipient_types:
+  author:
+    id: author
+    provider: workbench_email
+    status: true
+    settings: {  }
+bundles: {  }
+body:
+  value: "Hola,\r\n\r\n¡Enhorabuena! ¡Tu sesión \"[node:title]\" ([node:url]) ha sido aceptada con éxito en [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]! Ten en cuenta que este correo electrónico sólo va al autor del nodo, así que por favor informa a cualquier ponente adicional para esta sesión. \r\n\r\nPor favor, responde a este correo electrónico indicando que puedes realizar esta sesión en persona. Puedes encontrar información sobre las preguntas más frecuentes en [site:url]/guia-para-ponentes. Responde a este correo electrónico si tienes alguna pregunta adicional.\r\n\r\nCada persona que participe como ponente recibirá una entrada de cortesía cuando se confirme su sesión.\r\n\r\nAl responder a este correo confirmando tu participación como ponente, aceptas autorizar a la AED, de manera permanente, irrevocable y sin coste alguno, la grabación de la Presentación bajo una licencia Creative Commons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0/). Asimismo, cedes a la AED el derecho no exclusivo y sin coste alguno de usar tu voz, nombre, retrato o características similares con el único objetivo de anunciar, promover o utilizar la Presentación. También autorizas el uso de tu nombre o de otros datos relacionados con la sesión para publicitar o promover eventos similares en el futuro. La AED se reserva el derecho de editar o remover cualquier contenido que considere ofensivo, difamatorio, obsceno, inadecuado o inapropiado de cualquier otra manera.\r\n\r\nGracias de nuevo,\r\n\r\n-- Equipo de [config_page:event_details:field_event_name] [config_page:event_details:field_event_year]"
+  format: plain_text
+replyTo: '[site:mail]'
+transitions:
+  editorial: {  }
+  session_acceptance:
+    accept_session: accept_session

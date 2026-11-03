@@ -1,0 +1,50 @@
+@media (min-width: 768px) {
+  .path-frontpage .paragraph--type--cards [data-component-id="ddd2027:cards"] .cards-wrapper {
+    flex-direction: column;
+  }
+
+  .path-frontpage .paragraph--type--cards [data-component-id="ddd2027:cards"] .cards-wrapper > * {
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+  }
+
+  .path-frontpage .paragraph--type--cards [data-component-id="ddd2027:cards"] .cards-wrapper > *:before,
+  .path-frontpage .paragraph--type--cards [data-component-id="ddd2027:cards"] .cards-wrapper > *:after {
+    left: 50%;
+    margin: 0;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100vw - var(--page-side-margin));
+  }
+
+  .path-frontpage .paragraph--type--cards [data-component-id="ddd2027:cards"] .cards-wrapper > * > div {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}
+
+.path-frontpage .paragraph--type--cards [data-component-id="ddd2027:card"] {
+  text-align: center;
+}
+
+.path-frontpage .paragraph--type--cards [data-component-id="ddd2027:card"] [data-component-id="ddd2027:title"] > * {
+  color: var(--color--dark-navy);
+  font-family: var(--font-family);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.path-frontpage .paragraph--type--cards [data-component-id="ddd2027:card"] .text {
+  margin: var(--space-2) auto 0;
+  max-width: 560px;
+}
+
+.path-frontpage .paragraph--type--cards .component-background-color-white:before {
+  border-bottom: var(--border-width-hairline) solid var(--color--border);
+  border-top: var(--border-width-hairline) solid var(--color--border);
+  box-sizing: border-box;
+}
+

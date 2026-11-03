@@ -1,0 +1,32 @@
+.field--name-field-sections > .field__item > .paragraph:not(.paragraph--type--hero, .paragraph--type--links, .paragraph--type--wave-divider, .paragraph--type--card, .paragraph--type--cards) {
+  padding-bottom: var(--space-16);
+  padding-top: var(--space-16);
+}
+
+.field--name-field-sections > .field__item:has(> .paragraph:not(.component-background-color, .component-background-image, .paragraph--type--hero, .paragraph--type--links, .paragraph--type--wave-divider, .paragraph--type--card, .paragraph--type--cards)) + .field__item > .paragraph:not(.component-background-color, .component-background-image, .paragraph--type--hero, .paragraph--type--links, .paragraph--type--wave-divider, .paragraph--type--card, .paragraph--type--cards) {
+  padding-top: 0;
+}
+
+.field--name-field-sections > .field__item > :is(.paragraph--type--text, .paragraph--type--paragraphs-set) [data-component-id="ddd2027:text"] .title-bar [data-component-id="ddd2027:title"] > h2,
+.field--name-field-sections > .field__item > .paragraph--type--brief-information > .field--name-field-title [data-component-id="ddd2027:title"] > h2,
+.field--name-field-sections > .field__item > :is(.paragraph--type--links, .paragraph--type--text-image) > .field--name-field-title [data-component-id="ddd2027:title"] > h2,
+.field--name-field-sections > .field__item > :is(.paragraph--type--text, .paragraph--type--paragraphs-set) [data-component-id="ddd2027:text"] > .text h2 {
+  color: var(--color--dark-navy);
+  font-size: var(--text-h2);
+  font-weight: 700;
+}
+
+.field--name-field-sections > .field__item > .paragraph--type--links > .field--name-field-title {
+  text-align: center;
+}
+
+.field--name-field-sections > .field__item > :is(.paragraph--type--text, .paragraph--type--paragraphs-set) [data-component-id="ddd2027:text"] > .text {
+  color: var(--color--text-muted);
+  line-height: var(--leading-relaxed);
+  max-width: 680px;
+}
+
+.field--name-field-sections > .field__item > :is(.paragraph--type--text, .paragraph--type--paragraphs-set) [data-component-id="ddd2027:text"]:not(.text-with-button) > .text {
+  margin-left: auto;
+  margin-right: auto;
+}

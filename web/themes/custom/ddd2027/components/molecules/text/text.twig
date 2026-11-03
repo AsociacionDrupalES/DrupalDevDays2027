@@ -1,0 +1,22 @@
+{% set attributes = link_uri ? attributes.addClass('text-with-button') : attributes %}
+<div {{ attributes }}>
+  {% if title %}
+    <div class="title-bar">
+      {{ include(
+        'ddd2027:title',
+        { text: title, html_tag: 'h2' },
+        with_context = false
+      ) }}
+    </div>
+  {% endif %}
+  <div class="text text-formatted">{{ text }}</div>
+  {% if link_uri %}
+    <div class="text__cta">
+      {{ include(
+        'ddd2027:link',
+        { link_title: link_text, link_uri: link_uri, variant: 'transparent' },
+        with_context = false
+      ) }}
+    </div>
+  {% endif %}
+</div>

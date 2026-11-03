@@ -1,0 +1,23 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Text
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:text' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:text'
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+    link_text:
+      type: string
+      title: Link text
+    link_uri:
+      type: string
+      title: Link uri
+slots:
+  text:
+    title: Text

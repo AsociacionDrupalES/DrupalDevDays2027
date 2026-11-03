@@ -1,0 +1,119 @@
+[data-component-id="ddd2027:session_card"] {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background: var(--color--background-primary);
+  border: 1px solid var(--color--primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  padding: 30px 22px 20px;
+  width: 100%;
+  transition: box-shadow var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="ddd2027:session_card"] {
+    height: 100%;
+  }
+}
+
+[data-component-id="ddd2027:session_card"]:focus,
+[data-component-id="ddd2027:session_card"]:hover {
+  color: var(--color--primary);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+[data-component-id="ddd2027:session_card"] .speakers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+[data-component-id="ddd2027:session_card"] .speakers .avatar {
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline {
+  margin: 0;
+  gap: 14px;
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline li {
+  width: fit-content;
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline li:hover {
+  border: 2px solid var(--color--primary-light);
+  cursor: pointer;
+}
+
+[data-component-id="ddd2027:session_card"] [data-component-id="ddd2027:title"] > * {
+  color: var(--color--dark-navy);
+  font-family: var(--font-family);
+  font-size: var(--text-body);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+
+[data-component-id="ddd2027:session_card"] .speakers .name {
+  color: var(--color--text-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline.tags {
+  gap: 6px;
+}
+
+[data-component-id="ddd2027:session_card"] .tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+[data-component-id="ddd2027:session_card"] .tags-row ul.ul--pills--inline.tags {
+  display: contents;
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline.tags.tags--categories li:not([class*="tag__color-"]) {
+  background-color: var(--color--secondary-pale);
+  color: var(--color--dark-navy);
+  border: 1.5px solid var(--color--secondary);
+  border-radius: 50px;
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  padding: 4px 12px;
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline.tags.tags--categories li:not([class*="tag__color-"]):hover {
+  background-color: var(--color--secondary-pale);
+  color: var(--color--dark-navy);
+  border: 2px solid var(--color--primary-light);
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline li[class*="tag__color-"] {
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  padding: 4px 12px;
+}
+
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline:not(.tags--categories) li:not([class*="tag__color-"]),
+[data-component-id="ddd2027:session_card"] ul.ul--pills--inline:not(.tags--categories) li:not([class*="tag__color-"]):hover {
+  background-color: transparent;
+  border: var(--border-width-hairline) solid var(--color--border);
+  border-radius: var(--radius-sm);
+  color: var(--color--text-muted);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: var(--leading-normal);
+  padding: 3px 10px;
+}
+

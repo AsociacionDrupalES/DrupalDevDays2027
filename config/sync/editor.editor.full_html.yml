@@ -1,0 +1,154 @@
+uuid: 39ef051f-6c26-4fbd-a535-17710fcad06c
+langcode: es
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+_core:
+  default_config_hash: lurcn8yf33g3Dkzdc55cTfJa9salGp9ytSYyG1s7QMI
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - insertTable
+      - horizontalLine
+      - '|'
+      - alignment
+      - heading
+      - style
+      - codeBlock
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Texto sin formato'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diferencias
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Botón blanco'
+          element: '<a class="link--button link--button--white">'
+        -
+          label: 'Botón primario'
+          element: '<a class="link--button link--button--primary">'
+        -
+          label: 'Botón secundario'
+          element: '<a class="link--button link--button--secondary">'
+        -
+          label: 'Botón primario medio'
+          element: '<a class="link--button link--button--primary-medium">'
+        -
+          label: 'Botón primario claro'
+          element: '<a class="link--button link--button--primary-light">'
+        -
+          label: 'Botón transparente'
+          element: '<a class="link--button link--button--transparent">'
+        -
+          label: 'Botón naranja'
+          element: '<a class="link--button link--button--accent">'
+        -
+          label: 'Botón cian'
+          element: '<a class="link--button link--button--cyan">'
+        -
+          label: 'Con flecha'
+          element: '<a class="link--arrow">'
+        -
+          label: 'Texto grande'
+          element: '<p class="p--text-bigger">'
+        -
+          label: 'Texto pequeño'
+          element: '<p class="p--text-smaller">'
+        -
+          label: 'Píldoras en línea'
+          element: '<ul class="ul--pills--inline">'
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: null
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,21 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Wave divider"
+description: "Línea ondulada decorativa (SVG) que evoca la banda de mar/olas del logo. Se usa como transición entre secciones y encima del footer."
+status: stable
+props:
+  type: object
+  properties:
+    color:
+      type: string
+      title: Color
+      description: "Color del trazo de la onda (valor CSS)."
+      default: "var(--color--secondary)"
+    background:
+      type: string
+      title: Background
+      description: "Color de fondo detrás de la onda (opcional)."
+    flip:
+      type: boolean
+      title: Flip
+      description: "Voltea el SVG verticalmente (scaleY(-1)), para usarlo arriba o abajo de una sección."
+      default: false

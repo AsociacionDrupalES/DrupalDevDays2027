@@ -1,0 +1,22 @@
+<footer role="contentinfo" class="footer">
+  {{ include(
+    'ddd2027:wave_divider',
+    {},
+    with_context = false
+  ) }}
+  <div class="footer__content">
+    <div class="footer__logo">
+      <img src="{{ '/' ~ directory ~ '/ddd2027-logo.png' }}" alt="Drupal Dev Days" />
+    </div>
+    <div class="footer__social">
+      <a href="https://www.linkedin.com/company/drupaldevdays/home/" title="LinkedIn" class="footer__social__icon" target="_blank" rel="noopener">{{ source(directory ~ '/images/icons/social/linkedin.svg') }}<span class="visually-hidden">LinkedIn de Drupal Dev Days</span></a>
+      <a href="https://x.com/drupaldevdays" title="X" class="footer__social__icon" target="_blank" rel="noopener">{{ source(directory ~ '/images/icons/social/x.svg') }}<span class="visually-hidden">X (Twitter) de Drupal Dev Days</span></a>
+      <a href="https://www.facebook.com/drupaldevdays" title="Facebook" class="footer__social__icon" target="_blank" rel="noopener">{{ source(directory ~ '/images/icons/social/facebook.svg') }}<span class="visually-hidden">Facebook de Drupal Dev Days</span></a>
+      <a href="https://drupal.community/@ddd" title="Mastodon" class="footer__social__icon" target="_blank" rel="noopener">{{ source(directory ~ '/images/icons/social/mastodon.svg') }}<span class="visually-hidden">Mastodon de Drupal Dev Days</span></a>
+    </div>
+    <div class="footer__menu">
+      {{ content }}
+    </div>
+    <p class="footer__copyright">© 2026 Drupal Dev Days</p>
+  </div>
+</footer>

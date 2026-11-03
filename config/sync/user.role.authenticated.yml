@@ -1,0 +1,46 @@
+uuid: 2883a214-bd84-410c-b851-5c068eb8a73a
+langcode: es
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.webform
+    - filter.format.webform_default
+  module:
+    - antibot
+    - comment
+    - contact
+    - field_permissions
+    - file
+    - filter
+    - honeypot
+    - media
+    - navigation
+    - sitemap
+    - system
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Usuario autenticado'
+weight: -9
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access navigation'
+  - 'access site-wide contact form'
+  - 'access sitemap'
+  - 'access user profiles'
+  - 'bypass honeypot protection'
+  - 'cancel account'
+  - 'delete own files'
+  - 'post comments'
+  - 'skip antibot'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'use text format webform'
+  - 'use text format webform_default'
+  - 'view field_r'
+  - 'view field_time_slot'
+  - 'view media'
+  - 'view the administration theme'

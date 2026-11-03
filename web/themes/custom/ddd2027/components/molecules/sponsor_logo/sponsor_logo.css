@@ -1,0 +1,79 @@
+[data-component-id="ddd2027:sponsor_logo"]:not(.sponsor-logo__tier-individual) {
+  align-items: center;
+  background: var(--color--background-primary);
+  border: var(--border-width-hairline) solid var(--color--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  height: 66px;
+  justify-content: center;
+  padding: var(--space-4);
+  text-align: center;
+  width: 120px;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-platinum {
+  height: 121px;
+  width: 220px;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-gold {
+  height: 93.5px;
+  width: 170px;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-silver,
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-media {
+  height: 77px;
+  width: 140px;
+}
+
+[data-component-id="ddd2027:sponsor_logo"]:not(.sponsor-logo__tier-individual) .sponsor-logo__link {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: calc(-1 * var(--space-4));
+  padding: var(--space-4);
+  width: 100%;
+}
+
+[data-component-id="ddd2027:sponsor_logo"]:not(.sponsor-logo__tier-individual) .sponsor-logo__link,
+[data-component-id="ddd2027:sponsor_logo"]:not(.sponsor-logo__tier-individual) .sponsor-logo__link:hover,
+[data-component-id="ddd2027:sponsor_logo"]:not(.sponsor-logo__tier-individual) .sponsor-logo__link:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: none;
+}
+
+[data-component-id="ddd2027:sponsor_logo"] .sponsor-logo__image {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+[data-component-id="ddd2027:sponsor_logo"] .sponsor-logo__fallback {
+  color: var(--color--text-muted);
+  font-family: var(--font-family);
+  font-size: var(--text-small);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-individual {
+  display: inline-flex;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-individual .sponsor-logo__link {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+}
+
+[data-component-id="ddd2027:sponsor_logo"].sponsor-logo__tier-individual .sponsor-logo__name {
+  display: block;
+  font-size: var(--text-small);
+  line-height: var(--leading-snug);
+  max-width: 100px;
+}

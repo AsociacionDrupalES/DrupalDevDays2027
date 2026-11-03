@@ -1,0 +1,4 @@
+.p--text-smaller {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}

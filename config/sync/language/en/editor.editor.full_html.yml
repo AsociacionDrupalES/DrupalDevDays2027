@@ -1,0 +1,28 @@
+settings:
+  plugins:
+    ckeditor5_codeBlock:
+      languages:
+        0:
+          label: 'Plain text'
+        5:
+          label: Diff
+    ckeditor5_style:
+      styles:
+        -
+          label: 'White button'
+        -
+          label: 'Primary button'
+        -
+          label: 'Secondary button'
+        -
+          label: 'Light primary button'
+        -
+          label: 'Transparent button'
+        -
+          label: 'With arrow'
+        -
+          label: 'Large text'
+        -
+          label: 'Small text'
+        -
+          label: 'Inline pills'

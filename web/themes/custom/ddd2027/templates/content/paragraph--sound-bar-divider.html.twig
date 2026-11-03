@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Paragraph "Divisor de barras" (sound_bar_divider): sin campos, solo pinta
+ * el componente SDC ddd2027:sound_bar_divider. El color de las barras sale
+ * del behavior custom_color (Configuración); sin valor, o con "- Ninguno -"
+ * (se guarda como `transparent`), usa el cian del mockup de About.
+ */
+#}
+{% set color = paragraph.getBehaviorSetting('custom_color', 'color') %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ include('ddd2027:sound_bar_divider', {
+    color: color and color not in ['transparent', 'disabled'] ? 'var(--color--' ~ color ~ ')' : 'var(--color--secondary)',
+  }, with_context = false) }}
+</div>

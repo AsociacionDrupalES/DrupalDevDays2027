@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: "Circle frame"
+description: "Contenedor circular reutilizable para retratos de speakers, badges de sponsors e iconos de track."
+status: stable
+props:
+  type: object
+  properties:
+    size:
+      type: number
+      title: Size
+      description: "Ancho y alto del contenedor circular, en píxeles."
+      default: 96
+    image_url:
+      type: string
+      title: "Image URL"
+      description: "Ruta de la imagen a recortar dentro del círculo (object-fit: cover). Excluyente con el slot 'content': o imagen o icono, no ambos."
+    alt_text:
+      type: string
+      title: "Alt text"
+      description: "Texto alternativo de la imagen. Solo aplica cuando se usa 'image_url'."
+slots:
+  content:
+    title: Content
+    description: "Icono o glyph a mostrar cuando no hay imagen. Excluyente con la prop 'image_url'."

@@ -1,0 +1,51 @@
+{%
+  set data_attributes = {
+    'data-categories': categories|join(',')
+  }
+%}
+<div {{ attributes.addClass(data_attributes) }}>
+  <div class="session-schedule-card__type">
+    {{ include ('ddd2027:highlighted-pill', {
+      name: type,
+      background_color: 'primary'
+    }) }}
+  </div>
+  <div class="session-schedule-card__content">
+    {{ title }}
+    <div class="session-schedule-card__speakers">{{ speakers }}</div>
+  </div>
+  {% set tag_sources = tags['#field_name'] is defined ? [tags] : (tags ?: []) %}
+  {% set category_sources = [] %}
+  {% set other_sources = [] %}
+  {% for source in tag_sources %}
+    {% if source['#field_name'] is defined and source['#field_name'] == 'field_session_category' %}
+      {% set category_sources = category_sources|merge([source]) %}
+    {% else %}
+      {% set other_sources = other_sources|merge([source]) %}
+    {% endif %}
+  {% endfor %}
+  {% if pre_tags %}
+    {% set category_sources = category_sources|merge([pre_tags]) %}
+  {% endif %}
+  <div class="session-schedule-card__meta">
+    {% if category_sources %}
+    <ul class="session-schedule-card__pre-tags ul--pills--inline ul--pills--small">
+      {% for source in category_sources %}
+        {% for tag in source|without(
+          '#theme', '#title', '#label_display', '#view_mode', '#language',
+          '#field_name', '#field_type', '#field_translatable', '#entity_type',
+          '#bundle', '#object', '#items', '#formatter', '#is_multiple',
+          '#third_party_settings', '#cache', '#weight'
+        ) %}
+          {% if tag|render|striptags is not empty %}
+            {{ tag }}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <ul class="session-schedule-card__tags ul--pills--inline ul--pills--small">
+      {{ other_sources }}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+uuid: 794dddc3-0a1e-4e26-ba73-8768819604c6
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: 0uAxdol5uT7azw6sQpiaB-Z88AL-1aG7pUwlQZd_5Z4
+id: ddd2027_branding
+theme: ddd2027
+region: header_logo
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marca del sitio'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,23 @@
+<div {{ attributes }}>
+  <div class="content-wrapper">
+    {% if logo %}
+      <div class="logo">{{ logo }}</div>
+    {% endif %}
+    <div class="text-wrapper">
+      {{ include(
+        'ddd2027:title',
+        { text: title, html_tag: 'h1' },
+        with_context = false
+      ) }}
+      {% if tagline %}
+        <p class="hero__tagline">{{ tagline }}</p>
+      {% endif %}
+      <div class="text text-formatted">{{ text }}</div>
+    </div>
+  </div>
+  {{ include(
+    'ddd2027:sound_bar_divider',
+    { height: 36 },
+    with_context = false
+  ) }}
+</div>

@@ -1,0 +1,11 @@
+form .text-format-wrapper > div {
+  margin: 0;
+}
+form .form-item .description,
+form .form-item .fieldset-wrapper .description {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}
+.webform-type-webform-link .fieldset-wrapper > div:first-child {
+  margin: 0;
+}

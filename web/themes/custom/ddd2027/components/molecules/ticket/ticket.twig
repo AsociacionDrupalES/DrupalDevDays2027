@@ -1,0 +1,18 @@
+{% set link_variant = link_variant == 'transparent' ? '' : link_variant %}
+<div {{ attributes.addClass([
+  link_variant == 'disabled' ? 'ticket--disabled' : '',
+  featured ? 'ticket--featured' : '',
+]) }}>
+  <div class="title">{{ title }}</div>
+  <div class="price">{{ price }}</div>
+  <div class="text text-formatted">{{ text }}</div>
+  {{ include(
+    'ddd2027:link',
+    {
+      link_title: link_text,
+      link_uri: link_uri,
+      variant: link_variant | default(featured ? 'cyan' : 'accent'),
+    },
+    with_context = false
+  ) }}
+</div>

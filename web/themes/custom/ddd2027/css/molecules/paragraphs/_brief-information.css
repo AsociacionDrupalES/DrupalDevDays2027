@@ -1,0 +1,19 @@
+.paragraph--type--brief-information [data-component-id="ddd2027:title"] {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.paragraph--type--brief-information .paragraph--type--brief-information-content {
+  padding: 0;
+}
+
+.paragraph--type--brief-information [data-component-id="ddd2027:grid"] {
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--brief-information [data-component-id="ddd2027:grid"].grid--columns--3 {
+    grid-template-columns: repeat(3, minmax(0, 280px));
+  }
+}

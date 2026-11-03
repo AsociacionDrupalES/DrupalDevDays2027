@@ -1,0 +1,11 @@
+[data-component-id="ddd2027:speakers"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+[data-component-id="ddd2027:speakers"] > * {
+  box-sizing: border-box;
+  width: 230px;
+}

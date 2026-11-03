@@ -1,0 +1,22 @@
+uuid: 7f312207-4aa3-4c92-8571-82777d91a9f3
+langcode: es
+status: true
+dependencies:
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: IaC-Amz5T3WnvJmDY1kjzPvZKSPWbu-AwLS-d31Z3Qw
+id: ddd2027_local_tasks
+theme: ddd2027
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestañas
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

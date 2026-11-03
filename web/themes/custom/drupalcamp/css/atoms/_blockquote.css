@@ -1,0 +1,13 @@
+blockquote {
+  background-color: var(--color--secondary);
+  box-sizing: border-box;
+  border-radius: 17px;
+  font-size: calc(var(--font-size) * 0.85);
+  line-height: calc(var(--font-line-height) * 0.85);
+  margin: 25px 0;
+  padding: 20px;
+}
+
+blockquote p:last-child {
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+uuid: efc51176-9e70-463e-8cdb-ff9352d0766d
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.quick-actions
+  module:
+    - system
+  theme:
+    - ddd2027
+id: ddd2027_quick_actions
+theme: ddd2027
+region: header_content
+weight: -4
+provider: null
+plugin: 'system_menu_block:quick-actions'
+settings:
+  id: 'system_menu_block:quick-actions'
+  label: 'Acciones rápidas'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

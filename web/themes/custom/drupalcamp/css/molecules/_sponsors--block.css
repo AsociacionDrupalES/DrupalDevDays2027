@@ -1,0 +1,116 @@
+.block-views-blockall-sponsors-block-1 {
+  padding: 40px 0;
+  position: relative;
+}
+
+.block-views-blockall-sponsors-block-1:before {
+  background: white;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+  height: 100%;
+  z-index: -1;
+}
+
+.block-views-blockall-sponsors-block-1 h2 {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.sponsors-logos .sponsor-level-group {
+  border-top: 1px solid #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+.sponsors-logos .sponsor-level-group h3 {
+  font-size: var(--font-size);
+  line-height: var(--font-line-height);
+  min-width: 200px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  justify-content: start;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors a {
+  text-decoration: none;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors a .name {
+  display: none;
+  font-size: calc(var(--font-size) * 0.84);
+  line-height: calc(var(--font-line-height) * 0.7);
+  max-width: 100px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors a img {
+  height: 85px;
+  max-width: 350px;
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 21 / 7;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors .level-1 img {
+  height: 52px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors .level-2 img,
+.sponsors-logos .sponsor-level-group .sponsors .level-3 img,
+.sponsors-logos .sponsor-level-group .sponsors .level-4 img {
+  height: 32px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors .is-individual-1 a {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors .is-individual-1 a img {
+  border-radius: 55px;
+  height: 55px;
+  object-fit: cover;
+  width: 55px;
+}
+
+.sponsors-logos .sponsor-level-group .sponsors .is-individual-1 a .name {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .sponsors-logos .sponsor-level-group {
+    flex-direction: row;
+  }
+
+  .sponsors-logos .sponsor-level-group .sponsors {
+    gap: 35px;
+  }
+
+  .sponsors-logos .sponsor-level-group .sponsors .level-1 img {
+    height: 65px;
+  }
+
+  .sponsors-logos .sponsor-level-group .sponsors .level-2 img {
+    height: 50px;
+  }
+
+  .sponsors-logos .sponsor-level-group .sponsors .level-3 img {
+    height: 40px;
+  }
+
+  .sponsors-logos .sponsor-level-group .sponsors .level-4 img {
+    height: 40px;
+  }
+}

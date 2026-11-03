@@ -1,0 +1,35 @@
+.path-error .block-system-main-block {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  padding: 150px 0;
+  position: relative;
+  text-align: center;
+}
+
+.path-error .block-system-main-block:before {
+  background: var(--color--background-primary);
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+  z-index: -1;
+}
+
+.path-error .block-system-main-block:after {
+  display: block;
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
+  padding-top: 50px;
+}
+
+.path-error.path-error-403 .block-system-main-block:after {
+  content: '403';
+}
+
+.path-error.path-error-404 .block-system-main-block:after {
+  content: '404';
+}

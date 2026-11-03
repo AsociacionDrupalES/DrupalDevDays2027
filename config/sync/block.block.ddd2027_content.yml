@@ -1,0 +1,22 @@
+uuid: bc349a2a-43ee-4dba-bd83-fdbea664eec1
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: 7c5OCukSwzJZU1iITT9_iwbcRbFyDdOSRQs4C_gQFYU
+id: ddd2027_content
+theme: ddd2027
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

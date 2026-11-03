@@ -1,0 +1,4 @@
+.p--text-bigger {
+  font-size: var(--text-h4);
+  line-height: var(--leading-snug);
+}

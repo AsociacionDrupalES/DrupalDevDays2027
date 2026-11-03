@@ -1,0 +1,22 @@
+uuid: 03758182-b422-4b5b-bfe9-edb984e1c666
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ddd2027
+_core:
+  default_config_hash: adkUANCq8O_Zsvf2sF30_g0Iyw9iqv_mA79z6aEb8s4
+id: ddd2027_messages
+theme: ddd2027
+region: content
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Mensajes
+  label_display: '0'
+  provider: system
+visibility: {  }

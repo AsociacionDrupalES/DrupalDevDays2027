@@ -1,0 +1,6 @@
+settings:
+  label: 'How do I get to Drupal Dev Days?'
+  title: 'How do I get to Drupal Dev Days?'
+  body:
+    value: '<p>Everything you need to know to get to the event hassle-free, all in one place. See you soon!</p><p><a class="link--button link--button--secondary" href="/en/about-venue">Learn more</a></p>'
+    format: full_html

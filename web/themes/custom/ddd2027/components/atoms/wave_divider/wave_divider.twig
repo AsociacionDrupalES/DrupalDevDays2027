@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Wave divider component.
+ *
+ * Línea ondulada decorativa (SVG) que evoca la banda de mar/olas del logo,
+ * usada como transición entre secciones o encima del footer.
+ *
+ * @param {string} color - Color del trazo de la onda (valor CSS).
+ * @param {string} background - Color de fondo detrás de la onda.
+ * @param {boolean} flip - Voltea el SVG verticalmente (scaleY(-1)).
+ */
+#}
+{%
+  set classes = [
+    'wave-divider',
+    flip ? 'wave-divider--flip' : '',
+  ]
+%}
+<div
+  {{ attributes.addClass(classes) }}
+  style="--wave-color: {{ color|default('var(--color--secondary)') }}; --wave-background: {{ background|default('transparent') }};"
+>
+  <svg class="wave-divider__svg" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path
+      d="M0 20 Q 25 4 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20"
+      fill="none"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+  </svg>
+</div>

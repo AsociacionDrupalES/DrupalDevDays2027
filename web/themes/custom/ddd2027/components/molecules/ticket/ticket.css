@@ -1,0 +1,89 @@
+[data-component-id="ddd2027:ticket"] {
+  background-color: var(--color--background-primary);
+  border: var(--border-width-hairline) solid var(--color--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  text-align: center;
+  width: 100%;
+}
+
+[data-component-id="ddd2027:ticket"] .title {
+  color: var(--color--text-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-normal);
+  text-transform: uppercase;
+}
+
+[data-component-id="ddd2027:ticket"] .price {
+  color: var(--color--dark-navy);
+  font-family: var(--font-family);
+  font-size: var(--text-h1);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+}
+
+[data-component-id="ddd2027:ticket"] .text {
+  color: var(--color--text-muted);
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}
+
+[data-component-id="ddd2027:ticket"] .text ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+[data-component-id="ddd2027:ticket"] .text li {
+  display: flex;
+  gap: var(--space-2);
+}
+
+[data-component-id="ddd2027:ticket"] .text li::before {
+  color: var(--color--accent);
+  content: "•";
+  font-weight: 700;
+}
+
+[data-component-id="ddd2027:ticket"] .link {
+  margin-top: var(--space-2);
+}
+
+[data-component-id="ddd2027:ticket"] [data-component-id="ddd2027:link"] a {
+  display: block;
+  font-size: var(--text-body);
+  font-weight: 700;
+  padding: var(--space-3) var(--space-6);
+  width: 100%;
+}
+
+[data-component-id="ddd2027:ticket"].ticket--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+[data-component-id="ddd2027:ticket"].ticket--featured {
+  background-color: var(--color--dark-navy);
+  border-color: transparent;
+  color: var(--color--white);
+}
+
+[data-component-id="ddd2027:ticket"].ticket--featured .title {
+  color: var(--color--secondary-bright);
+}
+
+[data-component-id="ddd2027:ticket"].ticket--featured .price,
+[data-component-id="ddd2027:ticket"].ticket--featured .text {
+  color: var(--color--white);
+}

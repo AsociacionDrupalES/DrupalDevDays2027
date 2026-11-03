@@ -1,0 +1,15 @@
+/* Bloque del webform "Become a Sponsor" (/become-sponsor). */
+#block-ddd2027-webform,
+#block-ddd2027-webform-2,
+#block-ddd2027-webform-3{
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  #block-ddd2027-webform,
+  #block-ddd2027-webform-2,
+  #block-ddd2027-webform-3 {
+    width: 100%;
+  }
+}

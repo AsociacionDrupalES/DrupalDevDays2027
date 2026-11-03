@@ -1,0 +1,58 @@
+.ul--pills--inline > li[data-component-id="ddd2027:tag"]:hover {
+  border-color: var(--color--primary-light);
+}
+
+.ul--pills--inline li[data-component-id="ddd2027:tag"].tag--has-link:hover {
+  background-color: var(--color--secondary-pale);
+  color: var(--color--dark-navy);
+  border-color: var(--color--secondary);
+  text-shadow: 0 0 1px var(--color--dark-navy);
+}
+
+li[data-component-id="ddd2027:tag"] a {
+  text-decoration: none;
+}
+
+li[data-component-id="ddd2027:tag"]:hover a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Variants */
+
+.ul--pills--inline li.tag.tag__size-tiny {
+  padding: 0 10px;
+  border-radius: 12px;
+  font-size: 1em;
+  text-shadow: 0 0 1px var(--color--primary);
+}
+
+.ul--pills--inline li.tag.tag__color-secondary {
+  background-color: var(--color--secondary-pale);
+  color: var(--color--dark-navy);
+  border: 1.5px solid var(--color--secondary);
+}
+
+.ul--pills--inline li.tag.tag__color-primary {
+  background-color: var(--color--primary);
+  color: var(--color--white);
+  border-color: var(--color--primary);
+}
+
+.ul--pills--inline li.tag.tag__color-primary-light {
+  background-color: var(--color--primary-pale);
+  color: var(--color--dark-navy);
+  border: 1.5px solid var(--color--primary);
+}
+
+.ul--pills--inline li.tag.tag__color-accent {
+  background-color: var(--color--accent-pale);
+  color: var(--color--dark-navy);
+  border: 1.5px solid var(--color--accent);
+}
+
+.ul--pills--inline li.tag.tag__color-dark-navy {
+  background-color: var(--color--dark-navy);
+  color: var(--color--white);
+  border-color: var(--color--dark-navy);
+}

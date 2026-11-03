@@ -1,0 +1,36 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Ticket
+status: stable
+# Retrocompatibilidad (2026-09-28): la config usa 'drupalcamp:ticket' y core
+# (ComponentNegotiator) resuelve este componente cuando ddd2027 es el tema
+# activo; con drupalcamp activo se pinta el original. Ver
+# dev_utils/redesign-ddd2027/07-retrocompatibilidad-drupalcamp-theme.md.
+replaces: 'drupalcamp:ticket'
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+    price:
+      type: string
+      title: Price
+    link_text:
+      type: string
+      title: Link text
+    link_uri:
+      type: string
+      title: Link uri
+    link_variant:
+      type: string
+      title: Link variant
+    active:
+      type: boolean
+      title: Active
+    featured:
+      type: boolean
+      title: Featured
+      default: false
+slots:
+  text:
+    title: Text

@@ -1,0 +1,48 @@
+[data-component-id="ddd2027:person_card"] {
+  display: flex;
+  gap: var(--space-5) var(--space-12);
+}
+
+@media (min-width: 768px) {
+  [data-component-id="ddd2027:person_card"] .image-wrapper {
+    width: 20%;
+  }
+}
+
+[data-component-id="ddd2027:person_card"] .image-wrapper img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  [data-component-id="ddd2027:person_card"] .text-wrapper {
+    width: 80%;
+  }
+}
+
+[data-component-id="ddd2027:person_card"] .text-wrapper h2 {
+  font-size: var(--text-h4);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-3);
+}
+
+[data-component-id="ddd2027:person_card"] .text-wrapper .position {
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+[data-component-id="ddd2027:person_card"] .text-wrapper .summary {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}
+
+[data-component-id="ddd2027:person_card"] .text-wrapper .links > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+[data-component-id="ddd2027:person_card"] .text-wrapper .links > div a {
+  font-size: var(--text-label);
+  font-weight: 700;
+}

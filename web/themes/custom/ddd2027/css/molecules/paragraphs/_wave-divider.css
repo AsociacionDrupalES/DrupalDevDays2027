@@ -1,0 +1,10 @@
+.paragraph--type--wave-divider {
+  padding: var(--space-6) 0;
+}
+
+.paragraph--type--wave-divider [data-component-id="ddd2027:wave_divider"] {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  width: calc(100vw - var(--page-side-margin));
+}

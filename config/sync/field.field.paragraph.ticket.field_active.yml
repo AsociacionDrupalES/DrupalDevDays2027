@@ -1,0 +1,21 @@
+uuid: 04d237e9-2259-4231-936c-37c37a2ef2a4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_active
+    - paragraphs.paragraphs_type.ticket
+id: paragraph.ticket.field_active
+field_name: field_active
+entity_type: paragraph
+bundle: ticket
+label: Activo
+description: 'This field helps defining if the type of ticket is active or not (e.g. early bird).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Sí
+  off_label: 'No'
+field_type: boolean
